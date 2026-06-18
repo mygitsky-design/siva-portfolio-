@@ -125,6 +125,7 @@
         duration: 0.7,
         ease: "power3.out",
         stagger: 0.08,
+        clearProps: "transform",   // remove lingering translate so images stay crisp
         scrollTrigger: { trigger: group, start: "top 82%" },
         onStart: () => items.forEach((i) => i.classList.add("is-in")),
       });
@@ -137,6 +138,7 @@
         y: 0,
         duration: 0.7,
         ease: "power3.out",
+        clearProps: "transform",   // remove lingering translate so images stay crisp
         scrollTrigger: { trigger: el, start: "top 88%" },
         onStart: () => el.classList.add("is-in"),
       });
@@ -205,53 +207,75 @@
     nums.forEach((n) => io.observe(n));
   })();
 
-  /* ---------- Carousels: arrow visibility + locked-divider alignment ---------- */
+  /* ---------- Carousels: page-by-set paging, edge arrows, locked dividers ---------- */
   (function carousels() {
-    document.querySelectorAll("[data-carousel]").forEach((track) => {
-      const wrap = track.closest("[data-carousel-wrap]") || track.parentElement;
-      const prev = wrap.querySelector("[data-carousel-prev]");
-      const next = wrap.querySelector("[data-carousel-next]");
+    document.querySelectorAll("[data-admin-carousel]").forEach((carousel) => {
+      const wrap = carousel.closest("[data-carousel-wrap]") || carousel.parentElement;
+      const prevButton = wrap.querySelector("[data-carousel-prev]");
+      const nextButton = wrap.querySelector("[data-carousel-next]");
 
-      const step = () => {
-        const card = track.querySelector(":scope > *");
-        const gap = parseFloat(getComputedStyle(track).columnGap || "16") || 16;
-        return card ? card.getBoundingClientRect().width + gap : track.clientWidth * 0.8;
+      const cards = () => carousel.querySelectorAll("[data-carousel-card]");
+      const gapPx = () => {
+        const cs = getComputedStyle(carousel);
+        return parseFloat(cs.columnGap || cs.gap || "0") || 0;
       };
-      const update = () => {
-        if (!prev || !next) return;
-        const max = track.scrollWidth - track.clientWidth - 2;
-        prev.disabled = track.scrollLeft <= 2;       // hidden at the start
-        next.disabled = track.scrollLeft >= max;     // hidden at the end
+      const cardsPerPage = () => {
+        if (window.innerWidth <= 768) return 1;   // mobile
+        if (window.innerWidth <= 1024) return 2;  // tablet
+        return 3;                                 // desktop
       };
-      if (prev) prev.addEventListener("click", () => track.scrollBy({ left: -step(), behavior: "smooth" }));
-      if (next) next.addEventListener("click", () => track.scrollBy({ left: step(), behavior: "smooth" }));
+      const scrollAmount = () => {
+        const c = cards();
+        if (!c.length) return 0;
+        const cardWidth = c[0].getBoundingClientRect().width;
+        return (cardWidth + gapPx()) * cardsPerPage();   // exactly one visible set
+      };
+      const updateButtons = () => {
+        if (!prevButton || !nextButton) return;
+        const maxScrollLeft = carousel.scrollWidth - carousel.clientWidth;
+        const x = carousel.scrollLeft;
+        const threshold = 8;
+        const isAtStart = x <= threshold;
+        const isAtEnd = x >= maxScrollLeft - threshold;
 
-      // Equalize each card's top section so the dotted divider locks to the same Y.
-      const equalize = () => {
-        const cards = Array.from(track.querySelectorAll(".session-card"));
-        if (!cards.length) return;
-        const heads = [], bodies = [];
-        cards.forEach((c) => {
-          const h = c.querySelector(".session-card__head");
-          const b = h && h.nextElementSibling;        // the lead + details block
-          if (h) { h.style.minHeight = "0"; heads.push(h); }
-          if (b) { b.style.minHeight = "0"; bodies.push(b); }
+        prevButton.style.opacity = isAtStart ? "0" : "1";
+        prevButton.style.pointerEvents = isAtStart ? "none" : "auto";
+        prevButton.setAttribute("aria-hidden", isAtStart ? "true" : "false");
+
+        nextButton.style.opacity = isAtEnd ? "0" : "1";
+        nextButton.style.pointerEvents = isAtEnd ? "none" : "auto";
+        nextButton.setAttribute("aria-hidden", isAtEnd ? "true" : "false");
+      };
+      const scrollCarousel = (direction) => {
+        carousel.scrollBy({ left: direction * scrollAmount(), behavior: "smooth" });
+        window.setTimeout(updateButtons, 450);
+      };
+      if (prevButton) prevButton.addEventListener("click", () => scrollCarousel(-1));
+      if (nextButton) nextButton.addEventListener("click", () => scrollCarousel(1));
+      carousel.addEventListener("scroll", updateButtons, { passive: true });
+
+      // Align dividers to the FIRST card ("Post Publish Edit"). Measure each
+      // card's natural content height; pad shorter ones with padding-bottom equal
+      // to the difference. The first card gets 0 padding, so it never moves and
+      // card heights don't grow (filler just shifts to below the content).
+      const alignDividers = () => {
+        const contents = Array.from(carousel.querySelectorAll(".session-content"));
+        if (contents.length < 2) return;
+        contents.forEach((c) => { c.style.minHeight = ""; c.style.paddingBottom = "0px"; });
+        const heights = contents.map((c) => c.getBoundingClientRect().height);
+        const ref = heights[0]; // Post Publish Edit — the alignment reference
+        contents.forEach((c, i) => {
+          const diff = ref - heights[i];
+          c.style.paddingBottom = (diff > 0 ? Math.round(diff) : 0) + "px";
         });
-        let mh = 0, mb = 0;
-        heads.forEach((h) => (mh = Math.max(mh, h.getBoundingClientRect().height)));
-        bodies.forEach((b) => (mb = Math.max(mb, b.getBoundingClientRect().height)));
-        heads.forEach((h) => (h.style.minHeight = Math.ceil(mh) + "px"));
-        bodies.forEach((b) => (b.style.minHeight = Math.ceil(mb) + "px"));
       };
 
-      const refresh = () => { equalize(); update(); };
-      track.addEventListener("scroll", update, { passive: true });
-
+      const refresh = () => { alignDividers(); updateButtons(); };
       let t;
       window.addEventListener("resize", () => { clearTimeout(t); t = setTimeout(refresh, 120); }, { passive: true });
       window.addEventListener("load", refresh);
       if (document.fonts && document.fonts.ready) document.fonts.ready.then(refresh);
-      refresh();
+      requestAnimationFrame(refresh);
     });
   })();
 

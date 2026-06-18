@@ -228,14 +228,8 @@ strong { color: var(--ink); font-weight: 600; }
   text-transform: uppercase;
   color: var(--muted);
 }
-.eyebrow::before {
-  content: "";
-  width: 1.6rem;
-  height: 1px;
-  background: var(--line-strong);
-}
+.eyebrow::before { display: none; }
 .eyebrow--accent { color: var(--accent-ink); }
-.eyebrow--accent::before { background: var(--accent); }
 
 /* Section header */
 .section-head { max-width: var(--maxw-text); margin-bottom: var(--space-2xl); }
@@ -697,7 +691,7 @@ figure { margin: 0; }
 /* ---------------------------------------------------------------
    7. MOTION / REVEAL
    --------------------------------------------------------------- */
-.js [data-reveal] { opacity: 0; transform: translateY(22px); will-change: opacity, transform; }
+.js [data-reveal] { opacity: 0; transform: translateY(22px); }
 .js [data-reveal].is-in { opacity: 1; transform: none; }
 
 /* fallback transition if GSAP unavailable */
@@ -1093,13 +1087,14 @@ figure { margin: 0; }
   margin: 0; padding: 0;
   width: 40px; height: 40px; border-radius: 40px;
   cursor: pointer;
-  transition: opacity 0.25s var(--ease), background 0.2s var(--ease);
+  opacity: 1; pointer-events: auto;
+  transition: opacity 220ms ease, transform 220ms ease, background 220ms ease;
 }
-.carousel__btn:hover { background: rgba(0, 0, 0, 0.32); }
+.carousel__btn:hover { background: rgba(0, 0, 0, 0.28); transform: translateY(-50%) scale(1.04); }
 .carousel__btn svg { width: 18px; height: 18px; }
 [data-carousel-prev] { left: 16px; }
 [data-carousel-next] { right: 16px; }
-.carousel__btn[disabled] { opacity: 0; pointer-events: none; visibility: hidden; }
+.carousel__btn[aria-hidden="true"] { opacity: 0; pointer-events: none; }
 
 .carousel {
   display: flex; gap: var(--space-md);
@@ -1150,3 +1145,216 @@ figure { margin: 0; }
 .admin-voice blockquote { margin: var(--space-xs) 0 0; }
 .admin-voice blockquote p { font-size: var(--step--1); color: var(--ink-2); font-style: italic; }
 .admin-voice blockquote p + p { margin-top: var(--space-sm); }
+
+/* Show exactly 3 session cards per view on desktop (so paging moves a clean set of 3) */
+@media (min-width: 980px) {
+  .session-card { flex-basis: calc((100% - 2 * var(--space-md)) / 3); }
+}
+
+/* ===============================================================
+   WORKING SESSIONS CAROUSEL — Framer-reference match (overrides §11)
+   =============================================================== */
+.working-sessions-carousel {
+  position: relative;
+  width: 100%;
+  background: transparent !important;
+  overflow: visible;
+}
+
+.working-sessions-track {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  overflow-y: visible;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  background: transparent !important;
+  padding: 0 0 48px 0;
+}
+
+.working-sessions-track::-webkit-scrollbar {
+  display: none;
+}
+
+.working-session-card {
+  flex: 0 0 calc((100% - 32px) / 3);
+  scroll-snap-align: start;
+  background: #fff;
+  border: 0;
+  border-radius: 28px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.06), 0 10px 24px rgba(15, 23, 42, 0.06);
+  font-family: inherit;
+}
+
+.session-title {
+  margin: 0 0 20px;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 22px;
+  color: rgb(24, 24, 27);
+  letter-spacing: -0.02em;
+}
+
+.session-votes-bar {
+  height: 40px;
+  padding: 8px 12px;
+  margin-bottom: 28px;
+  background: rgb(244, 246, 248);
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.session-avatars {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+}
+
+.session-avatar {
+  width: 24px;
+  height: 24px;
+  border-radius: 999px;
+  object-fit: cover;
+  border: 2px solid rgb(244, 246, 248);
+  margin-left: -6px;
+  flex: 0 0 auto;
+}
+
+.session-avatar:first-child {
+  margin-left: 0;
+}
+
+.session-votes-count {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+  color: rgb(60, 68, 81);
+  white-space: nowrap;
+}
+
+.session-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.session-content-title {
+  margin: 0 0 14px;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 22px;
+  color: rgb(24, 24, 27);
+  letter-spacing: -0.01em;
+}
+
+.session-content-body,
+.session-content-body p,
+.session-content-body li {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 19px;
+  color: rgb(24, 24, 27);
+}
+
+.session-content-body p + p {
+  margin-top: 8px;
+}
+
+.session-divider {
+  margin: 16px 0 0;
+  width: 100%;
+  height: 1px;
+  border: 0;
+  border-top: 2px dashed rgb(192, 202, 209);
+  flex-shrink: 0;
+}
+
+.admin-voice {
+  margin-top: 24px;
+}
+
+.admin-voice-title {
+  margin: 0 0 8px;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 22px;
+  color: rgb(82, 82, 91);
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.admin-voice-text,
+.admin-voice-text p {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 19px;
+  color: rgb(24, 24, 27);
+}
+
+.admin-voice-text p + p {
+  margin-top: 12px;
+}
+
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 20;
+  border: none;
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border-radius: 40px;
+  background: rgba(0, 0, 0, 0.2);
+  color: #fff;
+  cursor: pointer;
+  transition: opacity 220ms ease, background 220ms ease;
+}
+
+.carousel-arrow:hover {
+  background: rgba(0, 0, 0, 0.28);
+}
+
+.carousel-arrow.prev {
+  left: 24px;
+  transform: translateY(-50%) rotate(180deg);
+}
+
+.carousel-arrow.next {
+  right: 24px;
+  transform: translateY(-50%);
+}
+
+.carousel-arrow[aria-hidden="true"] {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.carousel-arrow img,
+.carousel-arrow svg {
+  width: 18px;
+  height: 18px;
+  display: block;
+}
+
+@media (max-width: 1024px) {
+  .working-session-card {
+    flex-basis: calc((100% - 16px) / 2);
+  }
+}
+
+@media (max-width: 768px) {
+  .working-session-card {
+    flex-basis: 86%;
+  }
+}

@@ -238,218 +238,192 @@
             <p>Rather than designing to opinion, I converted qualitative feedback into an evidence-backed priority model, each opportunity carried by admins' own words and a clear vote count.</p>
           </div>
 
-          <div data-carousel-wrap data-reveal>
+          <div data-reveal>
             <div class="sessions__bar">
               <h3>Working Sessions with Admins</h3>
-              <div class="carousel__nav">
-                <button class="carousel__btn" type="button" data-carousel-prev aria-label="Previous opportunities" disabled>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
-                </button>
-                <button class="carousel__btn" type="button" data-carousel-next aria-label="Next opportunities">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
-                </button>
-              </div>
             </div>
-            <ul class="carousel" data-carousel role="list" tabindex="0" aria-label="Admin working-session opportunities, vote-ranked">
-            <li class="session-card" data-reveal>
-              <div class="session-card__head">
-                <h4 class="session-card__title">Post Publish Edit</h4>
-                <div class="session-card__metrics">
-                  <div class="avatars" aria-hidden="true"><img src="/assets/avatars/a1.png" width="96" height="96" alt="" loading="lazy"><img src="/assets/avatars/a2.png" width="96" height="96" alt="" loading="lazy"><img src="/assets/avatars/a3.png" width="96" height="96" alt="" loading="lazy"><img src="/assets/avatars/a4.png" width="96" height="96" alt="" loading="lazy"><img src="/assets/avatars/a5.png" width="96" height="96" alt="" loading="lazy"><img src="/assets/avatars/a6.png" width="96" height="96" alt="" loading="lazy"><img src="/assets/avatars/a7.png" width="96" height="96" alt="" loading="lazy"><img src="/assets/avatars/a8.png" width="96" height="96" alt="" loading="lazy"><img src="/assets/avatars/a9.png" width="96" height="96" alt="" loading="lazy"></div>
-                  <span class="votes">9 Votes</span>
-                </div>
+            <div class="working-sessions-carousel" data-carousel-wrap>
+              <div class="working-sessions-track" data-admin-carousel role="list" tabindex="0" aria-label="Admin working-session opportunities, vote-ranked">
+                <article class="working-session-card" data-carousel-card role="listitem" aria-label="1 of 10">
+                  <h3 class="session-title">Post Publish Edit</h3>
+                  <div class="session-votes-bar">
+                    <div class="session-avatars" aria-hidden="true"><img class="session-avatar" src="/assets/avatars/a1.png" width="24" height="24" alt="" loading="lazy"><img class="session-avatar" src="/assets/avatars/a2.png" width="24" height="24" alt="" loading="lazy"><img class="session-avatar" src="/assets/avatars/a3.png" width="24" height="24" alt="" loading="lazy"><img class="session-avatar" src="/assets/avatars/a4.png" width="24" height="24" alt="" loading="lazy"><img class="session-avatar" src="/assets/avatars/a5.png" width="24" height="24" alt="" loading="lazy"><img class="session-avatar" src="/assets/avatars/a6.png" width="24" height="24" alt="" loading="lazy"><img class="session-avatar" src="/assets/avatars/a7.png" width="24" height="24" alt="" loading="lazy"><img class="session-avatar" src="/assets/avatars/a8.png" width="24" height="24" alt="" loading="lazy"><img class="session-avatar" src="/assets/avatars/a9.png" width="24" height="24" alt="" loading="lazy"></div>
+                    <span class="session-votes-count">9 Votes</span>
+                  </div>
+                  <div class="session-content">
+                    <h4 class="session-content-title">The ability to make edits to a program even after it's been published.</h4>
+                    <div class="session-content-body"><p>Modify Conditional Wait.</p><p>Add / Remove steps in a program.</p><p>Update an email template used in send email step.</p><p>Modify tokens used in a program, add calculated fields.</p></div>
+                  </div>
+                  <hr class="session-divider">
+                  <div class="admin-voice">
+                    <p class="admin-voice-title">Admin Voice</p>
+                    <div class="admin-voice-text"><p>&ldquo;This will require more detail to avoid issues, such as ensuring visibility into which participants are affected and adding internal dependency checks. Overall, increased flexibility would be highly beneficial.&rdquo;</p><p>&ldquo;Currently we have to design all programs to fetch participants from the current program. This is the only way we can prevent rebuilding the query in the event a clone needs to happen.&rdquo;</p><p>&ldquo;Change the name of a program&rdquo;</p></div>
+                  </div>
+                </article>
+                <article class="working-session-card" data-carousel-card role="listitem" aria-label="2 of 10">
+                  <h3 class="session-title">Test Run</h3>
+                  <div class="session-votes-bar">
+                    <div class="session-avatars" aria-hidden="true"><img class="session-avatar" src="/assets/avatars/a1.png" width="24" height="24" alt="" loading="lazy"><img class="session-avatar" src="/assets/avatars/a2.png" width="24" height="24" alt="" loading="lazy"><img class="session-avatar" src="/assets/avatars/a3.png" width="24" height="24" alt="" loading="lazy"><img class="session-avatar" src="/assets/avatars/a4.png" width="24" height="24" alt="" loading="lazy"><img class="session-avatar" src="/assets/avatars/a5.png" width="24" height="24" alt="" loading="lazy"><img class="session-avatar" src="/assets/avatars/a6.png" width="24" height="24" alt="" loading="lazy"><img class="session-avatar" src="/assets/avatars/a7.png" width="24" height="24" alt="" loading="lazy"><img class="session-avatar" src="/assets/avatars/a8.png" width="24" height="24" alt="" loading="lazy"><img class="session-avatar" src="/assets/avatars/a9.png" width="24" height="24" alt="" loading="lazy"></div>
+                    <span class="session-votes-count">9 Votes</span>
+                  </div>
+                  <div class="session-content">
+                    <h4 class="session-content-title">Test run a program before publishing it</h4>
+                    <div class="session-content-body"><p>Test an individual step (test send email, check a condition etc).</p><p>Run program with test data without publishing it. Add test participants with data, run the program.</p></div>
+                  </div>
+                  <hr class="session-divider">
+                  <div class="admin-voice">
+                    <p class="admin-voice-title">Admin Voice</p>
+                    <div class="admin-voice-text"><p>&ldquo;This would be HUGE!!!&rdquo;</p><p>&ldquo;This would be a great help. At the moment to test sometimes I publish with a test contact, and if all is working well, I clone it and publish again&rdquo;</p><p>&ldquo;This would be huge. It would significantly reduce my anxiety when launching a program for the first time&rdquo;</p></div>
+                  </div>
+                </article>
+                <article class="working-session-card" data-carousel-card role="listitem" aria-label="3 of 10">
+                  <h3 class="session-title">Conditional Wait</h3>
+                  <div class="session-votes-bar">
+                    <div class="session-avatars" aria-hidden="true"><img class="session-avatar" src="/assets/avatars/a1.png" width="24" height="24" alt="" loading="lazy"><img class="session-avatar" src="/assets/avatars/a2.png" width="24" height="24" alt="" loading="lazy"><img class="session-avatar" src="/assets/avatars/a3.png" width="24" height="24" alt="" loading="lazy"><img class="session-avatar" src="/assets/avatars/a4.png" width="24" height="24" alt="" loading="lazy"><img class="session-avatar" src="/assets/avatars/a5.png" width="24" height="24" alt="" loading="lazy"><img class="session-avatar" src="/assets/avatars/a6.png" width="24" height="24" alt="" loading="lazy"><img class="session-avatar" src="/assets/avatars/a7.png" width="24" height="24" alt="" loading="lazy"></div>
+                    <span class="session-votes-count">7 Votes</span>
+                  </div>
+                  <div class="session-content">
+                    <h4 class="session-content-title">Enhanced conditional wait to honor weekends, user timezone</h4>
+                    <div class="session-content-body"><p>Introduce OOB options to select non working days.</p><p>Customer messages can be configured to be sent only on working days. Take individual participant timezone into consideration while applying the weekends.</p></div>
+                  </div>
+                  <hr class="session-divider">
+                  <div class="admin-voice">
+                    <p class="admin-voice-title">Admin Voice</p>
+                    <div class="admin-voice-text"><p>&ldquo;Today, it's challenging to manually determine the difference between the time of publishing a program and the time of communication for participants.&rdquo;</p></div>
+                  </div>
+                </article>
+                <article class="working-session-card" data-carousel-card role="listitem" aria-label="4 of 10">
+                  <h3 class="session-title">Edit Draft Program</h3>
+                  <div class="session-votes-bar">
+                    <div class="session-avatars" aria-hidden="true"><img class="session-avatar" src="/assets/avatars/a1.png" width="24" height="24" alt="" loading="lazy"><img class="session-avatar" src="/assets/avatars/a2.png" width="24" height="24" alt="" loading="lazy"><img class="session-avatar" src="/assets/avatars/a3.png" width="24" height="24" alt="" loading="lazy"><img class="session-avatar" src="/assets/avatars/a4.png" width="24" height="24" alt="" loading="lazy"><img class="session-avatar" src="/assets/avatars/a5.png" width="24" height="24" alt="" loading="lazy"></div>
+                    <span class="session-votes-count">5 Votes</span>
+                  </div>
+                  <div class="session-content">
+                    <h4 class="session-content-title">Change steps in program without deleting all subsequent steps</h4>
+                    <div class="session-content-body"><p>While configuring a program (Draft state), ability to easily add a step anywhere and retain configuration when a step is to be re arranged within the program.</p></div>
+                  </div>
+                  <hr class="session-divider">
+                  <div class="admin-voice">
+                    <p class="admin-voice-title">Admin Voice</p>
+                    <div class="admin-voice-text"><p>&ldquo;This would help prevent errors as adding or rearranging steps without losing configurations, increases the risk of misconfigurations while building huge programs where multiple steps are involved.&rdquo;</p></div>
+                  </div>
+                </article>
+                <article class="working-session-card" data-carousel-card role="listitem" aria-label="5 of 10">
+                  <h3 class="session-title">Surveys</h3>
+                  <div class="session-votes-bar">
+                    <div class="session-avatars" aria-hidden="true"><img class="session-avatar" src="/assets/avatars/a1.png" width="24" height="24" alt="" loading="lazy"><img class="session-avatar" src="/assets/avatars/a2.png" width="24" height="24" alt="" loading="lazy"><img class="session-avatar" src="/assets/avatars/a3.png" width="24" height="24" alt="" loading="lazy"><img class="session-avatar" src="/assets/avatars/a4.png" width="24" height="24" alt="" loading="lazy"></div>
+                    <span class="session-votes-count">4 Votes</span>
+                  </div>
+                  <div class="session-content">
+                    <h4 class="session-content-title">Embed surveys within email chain</h4>
+                    <div class="session-content-body"><p>Introduce a generic editor that is model agnostic.</p><p>Allow embedding surveys in a email step in any program.</p></div>
+                  </div>
+                  <hr class="session-divider">
+                  <div class="admin-voice">
+                    <p class="admin-voice-title">Admin Voice</p>
+                    <div class="admin-voice-text"><p>&ldquo;The reason this would be so important is because then I could use other features form the email step program that I can't get in a survey model program (eg, I can't use calculated fields in the conditional wait of a survey model program, to stop reminders from sending out if certain criteria is met)&rdquo;</p></div>
+                  </div>
+                </article>
+                <article class="working-session-card" data-carousel-card role="listitem" aria-label="6 of 10">
+                  <h3 class="session-title">Participant Timezone</h3>
+                  <div class="session-votes-bar">
+                    <div class="session-avatars" aria-hidden="true"><img class="session-avatar" src="/assets/avatars/a1.png" width="24" height="24" alt="" loading="lazy"><img class="session-avatar" src="/assets/avatars/a2.png" width="24" height="24" alt="" loading="lazy"><img class="session-avatar" src="/assets/avatars/a3.png" width="24" height="24" alt="" loading="lazy"><img class="session-avatar" src="/assets/avatars/a4.png" width="24" height="24" alt="" loading="lazy"></div>
+                    <span class="session-votes-count">4 Votes</span>
+                  </div>
+                  <div class="session-content">
+                    <h4 class="session-content-title">Schedule programs in user timezone, run multiple times a day</h4>
+                    <div class="session-content-body"><p>Allow running a program multiple times in a day at specific pre configured hours. The program schedule is adjusted automatically based on the participant timezone. This would allow calculated fields, reports to use the latest data.</p></div>
+                  </div>
+                  <hr class="session-divider">
+                  <div class="admin-voice">
+                    <p class="admin-voice-title">Admin Voice</p>
+                    <div class="admin-voice-text"><p>&ldquo;Timezones would be huge. Currently we have to do multiple programs to handle timezones.&rdquo;</p><p>&ldquo;Participant timezone would be the most used of these ideas&rdquo;</p><p>&ldquo;Multiple times per day would be super useful&rdquo;</p></div>
+                  </div>
+                </article>
+                <article class="working-session-card" data-carousel-card role="listitem" aria-label="7 of 10">
+                  <h3 class="session-title">Notifications</h3>
+                  <div class="session-votes-bar">
+                    <div class="session-avatars" aria-hidden="true"><img class="session-avatar" src="/assets/avatars/a1.png" width="24" height="24" alt="" loading="lazy"><img class="session-avatar" src="/assets/avatars/a2.png" width="24" height="24" alt="" loading="lazy"><img class="session-avatar" src="/assets/avatars/a3.png" width="24" height="24" alt="" loading="lazy"></div>
+                    <span class="session-votes-count">3 Votes</span>
+                  </div>
+                  <div class="session-content">
+                    <h4 class="session-content-title">Success and Failure Notifications</h4>
+                    <div class="session-content-body"><p>Just like all other features of the product that run jobs (eg, Rules Engine, Data Designer, Connectors...), JO should also have notification ability to notify admins of successful runs or failures of participant sources and/or programs.</p></div>
+                  </div>
+                  <hr class="session-divider">
+                  <div class="admin-voice">
+                    <p class="admin-voice-title">Admin Voice</p>
+                    <div class="admin-voice-text"><p>&ldquo;Current process is incredibly inefficient and frequently results in seasoned admins having missed a program silently failing or not running at all.&rdquo;</p></div>
+                  </div>
+                </article>
+                <article class="working-session-card" data-carousel-card role="listitem" aria-label="8 of 10">
+                  <h3 class="session-title">True Branching</h3>
+                  <div class="session-votes-bar">
+                    <div class="session-avatars" aria-hidden="true"><img class="session-avatar" src="/assets/avatars/a1.png" width="24" height="24" alt="" loading="lazy"></div>
+                    <span class="session-votes-count">1 Vote</span>
+                  </div>
+                  <div class="session-content">
+                    <h4 class="session-content-title">Ability to branch a program (beyond yes/no)</h4>
+                    <div class="session-content-body"><p>Support for branching, allowing a conditional wait to have more than two outcomes. Each branch can follow its own path independently, without needing to return to the main flow in a single step.</p></div>
+                  </div>
+                  <hr class="session-divider">
+                  <div class="admin-voice">
+                    <p class="admin-voice-title">Admin Voice</p>
+                    <div class="admin-voice-text"><p>&ldquo;The reason this would be so important is because then I could use other features form the email step program that I can't get in a survey model program (eg, calculated fields in the conditional wait of a survey model program, to stop reminders from sending out if certain criteria is met).&rdquo;</p></div>
+                  </div>
+                </article>
+                <article class="working-session-card" data-carousel-card role="listitem" aria-label="9 of 10">
+                  <h3 class="session-title">Opt-out &amp; Exclusion</h3>
+                  <div class="session-votes-bar">
+                    <div class="session-avatars" aria-hidden="true"><img class="session-avatar" src="/assets/avatars/a1.png" width="24" height="24" alt="" loading="lazy"></div>
+                    <span class="session-votes-count">1 Vote</span>
+                  </div>
+                  <div class="session-content">
+                    <h4 class="session-content-title">Centrally manage opt-outs and exclusion lists</h4>
+                    <div class="session-content-body"><p>Allow managing exclusion lists centrally which can be attached to a program. Participant unsubscriptions apply by default to all.</p></div>
+                  </div>
+                  <hr class="session-divider">
+                  <div class="admin-voice">
+                    <p class="admin-voice-title">Admin Voice</p>
+                    <div class="admin-voice-text"><p>&ldquo;Visibility into opt-out and exclusions are pretty lacking. It would also be great to have an easier way to exclude participants from similar programs, e.g. if you cloned a program, the participants of the original don't count as prior participants in the new clone.&rdquo;</p></div>
+                  </div>
+                </article>
+                <article class="working-session-card" data-carousel-card role="listitem" aria-label="10 of 10">
+                  <h3 class="session-title">Support Complex Sources</h3>
+                  <div class="session-votes-bar">
+                    <div class="session-avatars" aria-hidden="true"><img class="session-avatar" src="/assets/avatars/a1.png" width="24" height="24" alt="" loading="lazy"></div>
+                    <span class="session-votes-count">1 Vote</span>
+                  </div>
+                  <div class="session-content">
+                    <h4 class="session-content-title">Clone and template complex participant sources</h4>
+                    <div class="session-content-body"><p>Query-builder efficiencies, the ability to clone a particular query builder and save it as a template that can be applied to other programs.</p></div>
+                  </div>
+                  <hr class="session-divider">
+                  <div class="admin-voice">
+                    <p class="admin-voice-title">Admin Voice</p>
+                    <div class="admin-voice-text"><p>&ldquo;I would love to see enhancements for query builder efficiencies. It takes significant time to build queries for participant sources, especially for more complex organizations.&rdquo;</p></div>
+                  </div>
+                </article>
+                <article class="working-session-card" data-carousel-card role="listitem" aria-label="11 of 10">
+                  <h3 class="session-title">Integrations</h3>
+                  <div class="session-votes-bar">
+                    <div class="session-avatars" aria-hidden="true"><img class="session-avatar" src="/assets/avatars/a1.png" width="24" height="24" alt="" loading="lazy"></div>
+                    <span class="session-votes-count">1 Vote</span>
+                  </div>
+                  <div class="session-content">
+                    <h4 class="session-content-title">Integrations with other products</h4>
+                    <div class="session-content-body"><p>Introduce a generic, model-agnostic editor and connect with external products.</p></div>
+                  </div>
+                  <hr class="session-divider">
+                  <div class="admin-voice">
+                    <p class="admin-voice-title">Admin Voice</p>
+                    <div class="admin-voice-text"><p>&ldquo;Do we have an integration with (or planned for) HubSpot? Managing CS emails separate from other corporate emails/templates is a burden that could probably be overcome through integration.&rdquo;</p></div>
+                  </div>
+                </article>
               </div>
-              <div>
-                <p class="session-card__lead">The ability to make edits to a program even after it's been published.</p>
-                <ul class="session-card__details"><li>Modify Conditional Wait.</li><li>Add / Remove steps in a program.</li><li>Update an email template used in send email step.</li><li>Modify tokens used in a program, add calculated fields.</li></ul>
-              </div>
-              <hr class="dash">
-              <div class="admin-voice">
-                <span class="admin-voice__label">Admin Voice</span>
-                <blockquote><p>&ldquo;This will require more detail to avoid issues, such as ensuring visibility into which participants are affected and adding internal dependency checks. Overall, increased flexibility would be highly beneficial.&rdquo;</p><p>&ldquo;Currently we have to design all programs to fetch participants from the current program. This is the only way we can prevent rebuilding the query in the event a clone needs to happen.&rdquo;</p><p>&ldquo;Change the name of a program&rdquo;</p></blockquote>
-              </div>
-            </li>
-            <li class="session-card" data-reveal>
-              <div class="session-card__head">
-                <h4 class="session-card__title">Test Run</h4>
-                <div class="session-card__metrics">
-                  <div class="avatars" aria-hidden="true"><img src="/assets/avatars/a1.png" width="96" height="96" alt="" loading="lazy"><img src="/assets/avatars/a2.png" width="96" height="96" alt="" loading="lazy"><img src="/assets/avatars/a3.png" width="96" height="96" alt="" loading="lazy"><img src="/assets/avatars/a4.png" width="96" height="96" alt="" loading="lazy"><img src="/assets/avatars/a5.png" width="96" height="96" alt="" loading="lazy"><img src="/assets/avatars/a6.png" width="96" height="96" alt="" loading="lazy"><img src="/assets/avatars/a7.png" width="96" height="96" alt="" loading="lazy"><img src="/assets/avatars/a8.png" width="96" height="96" alt="" loading="lazy"><img src="/assets/avatars/a9.png" width="96" height="96" alt="" loading="lazy"></div>
-                  <span class="votes">9 Votes</span>
-                </div>
-              </div>
-              <div>
-                <p class="session-card__lead">Test run a program before publishing it</p>
-                <ul class="session-card__details"><li>Test an individual step (test send email, check a condition etc).</li><li>Run program with test data without publishing it. Add test participants with data, run the program.</li></ul>
-              </div>
-              <hr class="dash">
-              <div class="admin-voice">
-                <span class="admin-voice__label">Admin Voice</span>
-                <blockquote><p>&ldquo;This would be HUGE!!!&rdquo;</p><p>&ldquo;This would be a great help. At the moment to test sometimes I publish with a test contact, and if all is working well, I clone it and publish again&rdquo;</p><p>&ldquo;This would be huge. It would significantly reduce my anxiety when launching a program for the first time&rdquo;</p></blockquote>
-              </div>
-            </li>
-            <li class="session-card" data-reveal>
-              <div class="session-card__head">
-                <h4 class="session-card__title">Conditional Wait</h4>
-                <div class="session-card__metrics">
-                  <div class="avatars" aria-hidden="true"><img src="/assets/avatars/a1.png" width="96" height="96" alt="" loading="lazy"><img src="/assets/avatars/a2.png" width="96" height="96" alt="" loading="lazy"><img src="/assets/avatars/a3.png" width="96" height="96" alt="" loading="lazy"><img src="/assets/avatars/a4.png" width="96" height="96" alt="" loading="lazy"><img src="/assets/avatars/a5.png" width="96" height="96" alt="" loading="lazy"><img src="/assets/avatars/a6.png" width="96" height="96" alt="" loading="lazy"><img src="/assets/avatars/a7.png" width="96" height="96" alt="" loading="lazy"></div>
-                  <span class="votes">7 Votes</span>
-                </div>
-              </div>
-              <div>
-                <p class="session-card__lead">Enhanced conditional wait to honor weekends, user timezone</p>
-                <ul class="session-card__details"><li>Introduce OOB options to select non working days.</li><li>Customer messages can be configured to be sent only on working days. Take individual participant timezone into consideration while applying the weekends.</li></ul>
-              </div>
-              <hr class="dash">
-              <div class="admin-voice">
-                <span class="admin-voice__label">Admin Voice</span>
-                <blockquote><p>&ldquo;Today, it's challenging to manually determine the difference between the time of publishing a program and the time of communication for participants.&rdquo;</p></blockquote>
-              </div>
-            </li>
-            <li class="session-card" data-reveal>
-              <div class="session-card__head">
-                <h4 class="session-card__title">Edit Draft Program</h4>
-                <div class="session-card__metrics">
-                  <div class="avatars" aria-hidden="true"><img src="/assets/avatars/a1.png" width="96" height="96" alt="" loading="lazy"><img src="/assets/avatars/a2.png" width="96" height="96" alt="" loading="lazy"><img src="/assets/avatars/a3.png" width="96" height="96" alt="" loading="lazy"><img src="/assets/avatars/a4.png" width="96" height="96" alt="" loading="lazy"><img src="/assets/avatars/a5.png" width="96" height="96" alt="" loading="lazy"></div>
-                  <span class="votes">5 Votes</span>
-                </div>
-              </div>
-              <div>
-                <p class="session-card__lead">Change steps in program without deleting all subsequent steps</p>
-                <ul class="session-card__details"><li>While configuring a program (Draft state), ability to easily add a step anywhere and retain configuration when a step is to be re arranged within the program.</li></ul>
-              </div>
-              <hr class="dash">
-              <div class="admin-voice">
-                <span class="admin-voice__label">Admin Voice</span>
-                <blockquote><p>&ldquo;This would help prevent errors as adding or rearranging steps without losing configurations, increases the risk of misconfigurations while building huge programs where multiple steps are involved.&rdquo;</p></blockquote>
-              </div>
-            </li>
-            <li class="session-card" data-reveal>
-              <div class="session-card__head">
-                <h4 class="session-card__title">Surveys</h4>
-                <div class="session-card__metrics">
-                  <div class="avatars" aria-hidden="true"><img src="/assets/avatars/a1.png" width="96" height="96" alt="" loading="lazy"><img src="/assets/avatars/a2.png" width="96" height="96" alt="" loading="lazy"><img src="/assets/avatars/a3.png" width="96" height="96" alt="" loading="lazy"><img src="/assets/avatars/a4.png" width="96" height="96" alt="" loading="lazy"></div>
-                  <span class="votes">4 Votes</span>
-                </div>
-              </div>
-              <div>
-                <p class="session-card__lead">Embed surveys within email chain</p>
-                <ul class="session-card__details"><li>Introduce a generic editor that is model agnostic.</li><li>Allow embedding surveys in a email step in any program.</li></ul>
-              </div>
-              <hr class="dash">
-              <div class="admin-voice">
-                <span class="admin-voice__label">Admin Voice</span>
-                <blockquote><p>&ldquo;The reason this would be so important is because then I could use other features form the email step program that I can't get in a survey model program (eg, I can't use calculated fields in the conditional wait of a survey model program, to stop reminders from sending out if certain criteria is met)&rdquo;</p></blockquote>
-              </div>
-            </li>
-            <li class="session-card" data-reveal>
-              <div class="session-card__head">
-                <h4 class="session-card__title">Participant Timezone</h4>
-                <div class="session-card__metrics">
-                  <div class="avatars" aria-hidden="true"><img src="/assets/avatars/a1.png" width="96" height="96" alt="" loading="lazy"><img src="/assets/avatars/a2.png" width="96" height="96" alt="" loading="lazy"><img src="/assets/avatars/a3.png" width="96" height="96" alt="" loading="lazy"><img src="/assets/avatars/a4.png" width="96" height="96" alt="" loading="lazy"></div>
-                  <span class="votes">4 Votes</span>
-                </div>
-              </div>
-              <div>
-                <p class="session-card__lead">Schedule programs in user timezone, run multiple times a day</p>
-                <ul class="session-card__details"><li>Allow running a program multiple times in a day at specific pre configured hours. The program schedule is adjusted automatically based on the participant timezone. This would allow calculated fields, reports to use the latest data.</li></ul>
-              </div>
-              <hr class="dash">
-              <div class="admin-voice">
-                <span class="admin-voice__label">Admin Voice</span>
-                <blockquote><p>&ldquo;Timezones would be huge. Currently we have to do multiple programs to handle timezones.&rdquo;</p><p>&ldquo;Participant timezone would be the most used of these ideas&rdquo;</p><p>&ldquo;Multiple times per day would be super useful&rdquo;</p></blockquote>
-              </div>
-            </li>
-            <li class="session-card" data-reveal>
-              <div class="session-card__head">
-                <h4 class="session-card__title">Notifications</h4>
-                <div class="session-card__metrics">
-                  <div class="avatars" aria-hidden="true"><img src="/assets/avatars/a1.png" width="96" height="96" alt="" loading="lazy"><img src="/assets/avatars/a2.png" width="96" height="96" alt="" loading="lazy"><img src="/assets/avatars/a3.png" width="96" height="96" alt="" loading="lazy"></div>
-                  <span class="votes">3 Votes</span>
-                </div>
-              </div>
-              <div>
-                <p class="session-card__lead">Success and Failure Notifications</p>
-                <ul class="session-card__details"><li>Just like all other features of the product that run jobs (eg, Rules Engine, Data Designer, Connectors...), JO should also have notification ability to notify admins of successful runs or failures of participant sources and/or programs.</li></ul>
-              </div>
-              <hr class="dash">
-              <div class="admin-voice">
-                <span class="admin-voice__label">Admin Voice</span>
-                <blockquote><p>&ldquo;Current process is incredibly inefficient and frequently results in seasoned admins having missed a program silently failing or not running at all.&rdquo;</p></blockquote>
-              </div>
-            </li>
-            <li class="session-card" data-reveal>
-              <div class="session-card__head">
-                <h4 class="session-card__title">True Branching</h4>
-                <div class="session-card__metrics">
-                  <div class="avatars" aria-hidden="true"><img src="/assets/avatars/a1.png" width="96" height="96" alt="" loading="lazy"></div>
-                  <span class="votes">1 Vote</span>
-                </div>
-              </div>
-              <div>
-                <p class="session-card__lead">Ability to branch a program (beyond yes/no)</p>
-                <ul class="session-card__details"><li>Support for branching, allowing a conditional wait to have more than two outcomes. Each branch can follow its own path independently, without needing to return to the main flow in a single step.</li></ul>
-              </div>
-              <hr class="dash">
-              <div class="admin-voice">
-                <span class="admin-voice__label">Admin Voice</span>
-                <blockquote><p>&ldquo;The reason this would be so important is because then I could use other features form the email step program that I can't get in a survey model program (eg, calculated fields in the conditional wait of a survey model program, to stop reminders from sending out if certain criteria is met).&rdquo;</p></blockquote>
-              </div>
-            </li>
-            <li class="session-card" data-reveal>
-              <div class="session-card__head">
-                <h4 class="session-card__title">Opt-out &amp; Exclusion</h4>
-                <div class="session-card__metrics">
-                  <div class="avatars" aria-hidden="true"><img src="/assets/avatars/a1.png" width="96" height="96" alt="" loading="lazy"></div>
-                  <span class="votes">1 Vote</span>
-                </div>
-              </div>
-              <div>
-                <p class="session-card__lead">Centrally manage opt-outs and exclusion lists</p>
-                <ul class="session-card__details"><li>Allow managing exclusion lists centrally which can be attached to a program. Participant unsubscriptions apply by default to all.</li></ul>
-              </div>
-              <hr class="dash">
-              <div class="admin-voice">
-                <span class="admin-voice__label">Admin Voice</span>
-                <blockquote><p>&ldquo;Visibility into opt-out and exclusions are pretty lacking. It would also be great to have an easier way to exclude participants from similar programs, e.g. if you cloned a program, the participants of the original don't count as prior participants in the new clone.&rdquo;</p></blockquote>
-              </div>
-            </li>
-            <li class="session-card" data-reveal>
-              <div class="session-card__head">
-                <h4 class="session-card__title">Support Complex Sources</h4>
-                <div class="session-card__metrics">
-                  <div class="avatars" aria-hidden="true"><img src="/assets/avatars/a1.png" width="96" height="96" alt="" loading="lazy"></div>
-                  <span class="votes">1 Vote</span>
-                </div>
-              </div>
-              <div>
-                <p class="session-card__lead">Clone and template complex participant sources</p>
-                <ul class="session-card__details"><li>Query-builder efficiencies, the ability to clone a particular query builder and save it as a template that can be applied to other programs.</li></ul>
-              </div>
-              <hr class="dash">
-              <div class="admin-voice">
-                <span class="admin-voice__label">Admin Voice</span>
-                <blockquote><p>&ldquo;I would love to see enhancements for query builder efficiencies. It takes significant time to build queries for participant sources, especially for more complex organizations.&rdquo;</p></blockquote>
-              </div>
-            </li>
-            <li class="session-card" data-reveal>
-              <div class="session-card__head">
-                <h4 class="session-card__title">Integrations</h4>
-                <div class="session-card__metrics">
-                  <div class="avatars" aria-hidden="true"><img src="/assets/avatars/a1.png" width="96" height="96" alt="" loading="lazy"></div>
-                  <span class="votes">1 Vote</span>
-                </div>
-              </div>
-              <div>
-                <p class="session-card__lead">Integrations with other products</p>
-                <ul class="session-card__details"><li>Introduce a generic, model-agnostic editor and connect with external products.</li></ul>
-              </div>
-              <hr class="dash">
-              <div class="admin-voice">
-                <span class="admin-voice__label">Admin Voice</span>
-                <blockquote><p>&ldquo;Do we have an integration with (or planned for) HubSpot? Managing CS emails separate from other corporate emails/templates is a burden that could probably be overcome through integration.&rdquo;</p></blockquote>
-              </div>
-            </li>
-            </ul>
+              <button class="carousel-arrow prev" type="button" data-carousel-prev aria-label="Previous opportunities" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+              <button class="carousel-arrow next" type="button" data-carousel-next aria-label="Next opportunities"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+            </div>
           </div>
         </div>
       </section>
@@ -661,7 +635,7 @@
         </div>
       </div>
     </section>
-  </main>
+    </main>
 
   <!-- FOOTER -->
   <footer class="footer">
