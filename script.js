@@ -143,6 +143,28 @@
         onStart: () => el.classList.add("is-in"),
       });
     });
+
+    // Recompute trigger positions once images/fonts settle, so lazy media
+    // never leaves a [data-reveal] section stuck at opacity 0.
+    const refreshST = () => ScrollTrigger.refresh();
+    window.addEventListener("load", refreshST);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(refreshST);
+    document.querySelectorAll("img").forEach((img) => {
+      if (!img.complete) img.addEventListener("load", refreshST, { once: true });
+    });
+
+    // Safety net: anything still hidden a moment after load gets revealed,
+    // regardless of trigger math, CDN hiccups, or cache timing.
+    window.addEventListener("load", () => {
+      setTimeout(() => {
+        els.forEach((el) => {
+          if (parseFloat(getComputedStyle(el).opacity) < 0.05) {
+            gsap.set(el, { opacity: 1, y: 0, clearProps: "transform" });
+            el.classList.add("is-in");
+          }
+        });
+      }, 1500);
+    });
   })();
 
   /* ---------- Case-study section progress nav ---------- */
@@ -170,6 +192,23 @@
       { rootMargin: "-45% 0px -45% 0px" }
     );
     map.forEach((_, sec) => io.observe(sec));
+
+    // Hide the progress dots once the Outcomes section is reached (or passed),
+    // so they don't sit over the CTA / footer reveal.
+    const progress = document.querySelector(".cs-progress");
+    const outcomes = document.querySelector("[data-progress-hide]") || document.getElementById("outcomes");
+    if (progress && outcomes) {
+      const hideObs = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            const reachedOrPassed = e.isIntersecting || e.boundingClientRect.top < 0;
+            progress.classList.toggle("is-hidden", reachedOrPassed);
+          });
+        },
+        { rootMargin: "0px 0px -55% 0px" }
+      );
+      hideObs.observe(outcomes);
+    }
   })();
 
   /* ---------- Animated metric counters ---------- */
@@ -276,6 +315,23 @@
       window.addEventListener("load", refresh);
       if (document.fonts && document.fonts.ready) document.fonts.ready.then(refresh);
       requestAnimationFrame(refresh);
+    });
+  })();
+
+  /* ---------- Videos: autoplay, controls on hover/focus ---------- */
+  (function hoverVideos() {
+    const vids = document.querySelectorAll("video[data-hover-controls]");
+    vids.forEach((v) => {
+      const show = () => { v.controls = true; };
+      const hide = () => { v.controls = false; };
+      v.addEventListener("mouseenter", show);
+      v.addEventListener("mouseleave", hide);
+      v.addEventListener("focusin", show);
+      v.addEventListener("focusout", hide);
+      // Some browsers block autoplay until ready; nudge playback.
+      const tryPlay = () => { const p = v.play(); if (p && p.catch) p.catch(() => {}); };
+      if (v.readyState >= 2) tryPlay();
+      else v.addEventListener("canplay", tryPlay, { once: true });
     });
   })();
 
