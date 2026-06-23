@@ -335,6 +335,62 @@
     });
   })();
 
+  /* ---------- Image lightbox (click a figure image to enlarge) ---------- */
+  (function lightbox() {
+    const imgs = Array.from(document.querySelectorAll(".figure img"));
+    if (!imgs.length) return;
+
+    const box = document.createElement("div");
+    box.className = "lightbox";
+    box.setAttribute("role", "dialog");
+    box.setAttribute("aria-modal", "true");
+    box.setAttribute("aria-hidden", "true");
+    box.innerHTML =
+      '<button class="lightbox__close" type="button" aria-label="Close image">' +
+      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>' +
+      '</button><img class="lightbox__img" alt="" />';
+    document.body.appendChild(box);
+
+    const bigImg = box.querySelector(".lightbox__img");
+    const closeBtn = box.querySelector(".lightbox__close");
+    let lastFocus = null;
+
+    const open = (src, alt) => {
+      bigImg.src = src;
+      bigImg.alt = alt || "";
+      box.classList.add("is-open");
+      box.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+      closeBtn.focus();
+    };
+    const close = () => {
+      box.classList.remove("is-open");
+      box.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+      bigImg.src = "";
+      if (lastFocus) lastFocus.focus();
+    };
+
+    imgs.forEach((img) => {
+      img.setAttribute("tabindex", "0");
+      img.setAttribute("role", "button");
+      img.addEventListener("click", () => {
+        lastFocus = img;
+        open(img.currentSrc || img.src, img.alt);
+      });
+      img.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") { e.preventDefault(); lastFocus = img; open(img.currentSrc || img.src, img.alt); }
+      });
+    });
+
+    closeBtn.addEventListener("click", close);
+    bigImg.addEventListener("click", close);
+    box.addEventListener("click", (e) => { if (e.target === box) close(); });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && box.classList.contains("is-open")) close();
+    });
+  })();
+
   /* ---------- Current year ---------- */
   (function year() {
     const el = document.querySelector("[data-year]");
