@@ -1679,3 +1679,17 @@ figure { margin: 0; }
   .hp-featured__text { padding: 32px 24px; }
 }
 @media (prefers-reduced-motion: reduce) { .hp .jo-conn { animation: none; } }
+
+/* ---------------------------------------------------------------
+   V2 compare pill (shown on both original and V2 pages)
+   --------------------------------------------------------------- */
+.v2-compare { position: fixed; left: 50%; bottom: 18px; transform: translateX(-50%); z-index: 300;
+  display: inline-flex; align-items: center; gap: 0.6rem; padding: 0.55rem 0.6rem 0.55rem 1rem; border-radius: 999px;
+  background: rgba(15,15,18,0.82); color: #fff; font-size: 0.85rem; font-weight: 500; border: 1px solid rgba(255,255,255,0.14);
+  box-shadow: 0 18px 40px -18px rgba(0,0,0,0.5); -webkit-backdrop-filter: blur(14px) saturate(160%); backdrop-filter: blur(14px) saturate(160%); }
+.v2-compare__tag { display: inline-flex; align-items: center; gap: 0.4rem; color: rgba(255,255,255,0.75); }
+.v2-compare__tag::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: #5b5bd6; box-shadow: 0 0 10px 1px rgba(91,91,214,0.5); }
+.v2-compare a { display: inline-flex; align-items: center; gap: 0.35rem; padding: 0.35rem 0.85rem; border-radius: 999px;
+  background: #fff; color: #18181b; font-weight: 600; transition: transform 0.2s ease; }
+.v2-compare a:hover { transform: translateY(-1px); }
+@media (max-width: 600px) { .v2-compare { font-size: 0.78rem; bottom: 12px; } }

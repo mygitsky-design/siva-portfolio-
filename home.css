@@ -1,0 +1,94 @@
+/* ============================================================
+   Home — Gradient Background + Smart Header (handoff: Concept 9)
+   Loaded after /styles.css, scoped to body.home-cine. Self-contained.
+   ============================================================ */
+.home-cine { --hc-ease: cubic-bezier(.22,1,.36,1); --hc-accent: #6c74c4; }
+
+/* ---------- Gradient canvas baked into the content surface ----------
+   #main stays OPAQUE so it covers the dark sticky footer until the final
+   scroll, and carries the gradient (base wash + 3 soft blooms + center
+   white wash) as a fixed-attachment background, so it reads as a stationary
+   canvas while the page scrolls over it. Base styles.css keeps #main's
+   rounded bottom corners + z-index that drive the dark footer reveal. */
+.home-cine #main {
+  background-color: #fbfaf8;
+  background-image:
+    radial-gradient(85% 70% at 50% 38%, rgba(251,250,248,.85) 0%, rgba(251,250,248,.30) 46%, rgba(251,250,248,0) 72%),
+    radial-gradient(62vw 62vw at 103% -5%, rgba(120,126,205,.30) 0%, transparent 60%),
+    radial-gradient(60vw 60vw at -5% 104%, rgba(150,134,196,.24) 0%, transparent 60%),
+    radial-gradient(54vw 54vw at 42% 32%, rgba(118,150,200,.16) 0%, transparent 60%),
+    linear-gradient(180deg, #fbfaf8 0%, #f4f3ef 60%, #efeee9 100%);
+  background-attachment: fixed, fixed, fixed, fixed, fixed;
+  background-repeat: no-repeat;
+}
+:root[data-theme="dark"] .home-cine #main {
+  background-color: #0b0b0f;
+  background-image:
+    radial-gradient(85% 70% at 50% 38%, rgba(12,12,16,.45) 0%, transparent 72%),
+    radial-gradient(62vw 62vw at 103% -5%, rgba(120,126,205,.20) 0%, transparent 60%),
+    radial-gradient(60vw 60vw at -5% 104%, rgba(150,134,196,.18) 0%, transparent 60%),
+    radial-gradient(54vw 54vw at 42% 32%, rgba(118,150,200,.14) 0%, transparent 60%),
+    linear-gradient(180deg, #0b0b0f 0%, #0d0d12 60%, #0a0a0e 100%);
+}
+
+/* ---------- Smart header ---------- */
+.home-cine .nav {
+  background: transparent;
+  border-bottom: 0; box-shadow: none;
+  transition: transform .45s var(--hc-ease), box-shadow .35s ease;
+  will-change: transform;
+}
+/* Frosted white linear gradient on two masked layers, so the frost + gradient fade out at the
+   bottom (merging into the page, no gray fringe) without ever fading the nav content.
+   ::before = frosted blur + a subtle, mostly-transparent white gradient near the top (always on).
+   ::after  = the more-solid white gradient that fades in once you scroll past the hero.
+   Pure white (255,255,255) keeps the frost reading white, not gray. */
+.home-cine .nav::before,
+.home-cine .nav::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  -webkit-mask-image: linear-gradient(180deg, #000 58%, transparent 100%);
+  mask-image: linear-gradient(180deg, #000 58%, transparent 100%);
+}
+.home-cine .nav::before {
+  z-index: -2;
+  background: linear-gradient(180deg, rgba(255,255,255,.50) 0%, rgba(255,255,255,.14) 55%, rgba(255,255,255,0) 100%);
+  -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+}
+.home-cine .nav::after {
+  z-index: -1;
+  background: linear-gradient(180deg, rgba(255,255,255,.95) 0%, rgba(255,255,255,.80) 50%, rgba(255,255,255,0) 100%);
+  opacity: 0; transition: opacity .4s var(--hc-ease);
+}
+.home-cine .nav.is-scrolled::after { opacity: 1; }
+.home-cine .nav.is-scrolled { box-shadow: 0 1px 0 rgba(43,47,56,.05); }
+.home-cine .nav.is-hidden { transform: translateY(-110%); }
+:root[data-theme="dark"] .home-cine .nav::before { background: linear-gradient(180deg, rgba(13,13,18,.50) 0%, rgba(13,13,18,.14) 55%, rgba(13,13,18,0) 100%); }
+:root[data-theme="dark"] .home-cine .nav::after { background: linear-gradient(180deg, rgba(13,13,18,.95) 0%, rgba(13,13,18,.80) 50%, rgba(13,13,18,0) 100%); }
+:root[data-theme="dark"] .home-cine .nav.is-scrolled { box-shadow: 0 1px 0 rgba(255,255,255,.06); }
+@media (prefers-reduced-motion: reduce) {
+  .home-cine .nav { transition: box-shadow .3s ease; }
+  .home-cine .nav::after { transition: none; }
+  .home-cine .nav.is-hidden { transform: none; }
+}
+
+/* ---------- Content polish (glassy cards on the canvas) ---------- */
+.home-cine .hero { position: relative; overflow: clip; min-height: 84vh; display: flex; align-items: center; }
+.home-cine .eyebrow { padding: .32rem .7rem; border-radius: 999px;
+  background: linear-gradient(180deg, rgba(108,116,196,.10), rgba(108,116,196,.05)); border: 1px solid rgba(108,116,196,.18); }
+.home-cine .stat__value { background: linear-gradient(120deg, var(--ink) 32%, var(--hc-accent)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.home-cine .stat__value .unit { -webkit-text-fill-color: var(--hc-accent); color: var(--hc-accent); }
+.home-cine .card, .home-cine .work-card { border-radius: 16px; }
+.home-cine .work-card {
+  background: rgba(255,255,255,.6); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
+  border: 1px solid rgba(43,47,56,.08); box-shadow: 0 12px 34px rgba(60,64,82,.08);
+}
+:root[data-theme="dark"] .home-cine .work-card { background: rgba(28,28,36,.55); border-color: rgba(255,255,255,.08); }
+.home-cine .card--hover:hover, .home-cine .work-card:hover { transform: translateY(-5px); box-shadow: 0 24px 54px rgba(60,64,82,.15); }
+.home-cine .metrics-band { background: rgba(255,255,255,.6); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); border-radius: 16px; }
+:root[data-theme="dark"] .home-cine .metrics-band { background: rgba(28,28,36,.55); }
+.home-cine .btn--accent { background: linear-gradient(135deg, #6c74c4, #5b5bd6); }
+
+/* Headline word entrance + magnetic CTA easing */
+.home-cine .hero__title .hc-w { display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: .04em; }
+.home-cine .hero__title .hc-w__i { display: inline-block; will-change: transform; }
+.home-cine .hero__actions .btn { transition: transform .28s var(--hc-ease), background .25s var(--hc-ease), box-shadow .25s var(--hc-ease); }
