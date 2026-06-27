@@ -141,113 +141,301 @@
     </section>
 
     <!-- SELECTED WORK -->
-    <section class="section">
+    <section class="section csf" id="work">
       <div class="container">
-        <div class="section-head" data-reveal>
-          <span class="eyebrow eyebrow--accent">Selected work</span>
-          <h2>Case studies</h2>
-          <p>Design leadership across enterprise SaaS, platform design, product strategy and organizational change.</p>
+
+        <!-- header -->
+        <div class="csf__head" data-reveal style="margin-bottom:30px">
+          <span class="eyebrow eyebrow--accent" style="display:inline-flex;align-items:center;gap:9px;letter-spacing:.16em;text-transform:uppercase;font-size:.72rem">
+            <span style="width:6px;height:6px;border-radius:50%;background:#818cf8;box-shadow:0 0 11px #818cf8"></span>Selected work &mdash; Enterprise design leadership
+          </span>
+          <h2 style="margin:26px 0 0;font-weight:800;font-size:clamp(2.5rem,1.5rem+3.4vw,4.25rem);line-height:.98;letter-spacing:-.04em;color:#0b0b14;max-width:840px">I lead platform transformations.</h2>
+          <p style="margin:24px 0 0;max-width:520px;font-size:1.05rem;line-height:1.6;color:#6a6a78">Two flagship initiatives &mdash; a ground-up SaaS platform rebuild and a company-wide accessibility transformation &mdash; spanning product strategy, design systems and organizational change.</p>
         </div>
 
-        <a class="work-card" href="/journey-orchestrator" data-reveal aria-label="Read the Journey Orchestrator case study">
-          <div class="work-card__media">
-            <img src="/assets/program-builder.png" width="1800" height="1125"
-                 alt="The redesigned Journey Orchestrator program builder: a drag-and-drop canvas with audience, email, survey and conditional nodes branching across the screen, beside an actions and conditions palette." loading="lazy" />
-          </div>
-          <div class="work-card__body">
-            <div class="tag-row">
-              <span class="pill pill--accent">Enterprise SaaS</span>
-              <span class="pill">AI-native</span>
-              <span class="pill">Design systems</span>
-              <span class="pill">UX strategy</span>
-            </div>
-            <h3 class="work-card__title">From frustration to flow: rebuilding the Program Builder</h3>
-            <p class="measure">Led research, stakeholder alignment and design for a ground-up rebuild, introducing drag-and-drop authoring, AI-powered inline source creation, versioning, testing and dynamic timezones. Result: &minus;58% setup time and a doubling of monthly customer growth.</p>
-            <span class="link-arrow">Read the case study
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg>
-            </span>
-          </div>
-        </a>
+        <!-- FLAGSHIP : JOURNEY ORCHESTRATOR -->
+        <div class="csf-flag" data-reveal style="position:relative;margin-top:46px;border-radius:30px;overflow:hidden;border:1px solid rgba(20,20,45,.08);background:linear-gradient(180deg,#fff,#fbfbfd);box-shadow:0 60px 140px -50px rgba(30,30,70,.30),inset 0 1px 0 rgba(255,255,255,.7)">
+          <div class="csf-flag__spot" style="position:absolute;inset:0;pointer-events:none;background:transparent;transition:background .25s ease;z-index:30"></div>
 
-        <div class="grid grid--2" style="margin-top:var(--space-lg)" data-stagger>
-          <a class="work-card" href="/program-versioning" data-reveal aria-label="Read the Program Versioning case study">
-            <div class="work-card__media" style="display:grid;place-items:center;padding:var(--space-xl)">
-              <div class="mock" style="width:100%;box-shadow:none">
-                <div class="mock__bar"><span class="mock__crumb">Q3 Renewal</span><span style="margin-left:auto;display:flex;gap:0.4rem"><span class="status status--active">Active</span><span class="status status--draft">PPE Draft</span></span></div>
-                <div class="mock__body" style="padding:var(--space-md)">
-                  <div class="flow-mock">
-                    <div class="flow-node" style="padding:0.5rem 0.7rem"><span class="flow-node__name">Send email</span><span class="flow-node__tag" style="color:var(--muted)">Existing</span></div>
-                    <div class="flow-node flow-node--new" style="padding:0.5rem 0.7rem"><span class="flow-node__name">Slack nudge</span><span class="flow-node__tag">New</span></div>
-                  </div>
+          <!-- cinematic stage -->
+          <div class="csf-stage" data-csf-stage style="position:relative;height:560px;overflow:hidden;border-bottom:1px solid rgba(20,20,45,.07);background:radial-gradient(560px circle at 64% 36%,rgba(99,102,241,.10),transparent 64%)">
+            <div class="csf-gpulse" style="position:absolute;top:-90px;left:46%;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(99,102,241,.12),transparent 70%);filter:blur(26px);pointer-events:none"></div>
+            <div class="csf-gpulse" style="position:absolute;bottom:-110px;right:8%;width:340px;height:340px;border-radius:50%;background:radial-gradient(circle,rgba(56,189,248,.12),transparent 70%);filter:blur(28px);pointer-events:none"></div>
+
+            <!-- (A) builder window -->
+            <div data-par="10" class="csf-stage__win" style="position:absolute;top:64px;left:54px;width:540px;border-radius:16px;overflow:hidden;border:1px solid rgba(20,20,45,.10);background:#fff;box-shadow:0 50px 90px -30px rgba(30,30,70,.26);z-index:10">
+              <div style="display:flex;align-items:center;gap:7px;padding:11px 14px;background:rgba(20,20,45,.03);border-bottom:1px solid rgba(20,20,45,.07)">
+                <span style="width:10px;height:10px;border-radius:50%;background:#ff5f57"></span>
+                <span style="width:10px;height:10px;border-radius:50%;background:#febc2e"></span>
+                <span style="width:10px;height:10px;border-radius:50%;background:#28c840"></span>
+                <div style="flex:1;margin-left:10px;height:22px;border-radius:7px;background:rgba(20,20,45,.05);display:flex;align-items:center;padding:0 10px;font:500 10px var(--font-sans);color:#9a9aa4">app &middot; journey orchestrator &middot; builder</div>
+                <span style="padding:3px 9px;border-radius:6px;background:rgba(99,102,241,.10);color:#4f46e5;font:700 9px var(--font-sans);letter-spacing:.08em">EDITING</span>
+              </div>
+              <div style="position:relative;height:300px;background:radial-gradient(circle at 1px 1px,rgba(20,20,45,.06) 1px,transparent 0);background-size:24px 24px;background-color:#fbfbfd">
+                <svg viewBox="0 0 540 300" preserveAspectRatio="none" style="position:absolute;inset:0;width:100%;height:100%">
+                  <path d="M150 78 L150 120" stroke="rgba(129,140,248,.5)" stroke-width="2" fill="none" data-flowline/>
+                  <path d="M150 168 C150 205 96 196 96 232" stroke="rgba(99,102,241,.30)" stroke-width="2" fill="none" data-flowline/>
+                  <path d="M150 168 C150 205 232 196 232 232" stroke="rgba(56,189,248,.4)" stroke-width="2" fill="none" data-flowline/>
+                </svg>
+                <div class="csf-nodepulse" style="position:absolute;top:34px;left:90px;width:120px;padding:11px;border-radius:11px;background:rgba(34,197,94,.10);border:1px solid rgba(34,197,94,.28);display:flex;align-items:center;gap:8px">
+                  <span style="width:24px;height:24px;border-radius:7px;background:rgba(34,197,94,.18);display:flex;align-items:center;justify-content:center;font-size:12px">&#128101;</span>
+                  <span style="font:600 11px var(--font-sans);color:#15803d">Audience</span>
+                </div>
+                <div class="csf-nodepulse" style="position:absolute;top:124px;left:90px;width:120px;padding:11px;border-radius:11px;background:rgba(99,102,241,.10);border:1px solid rgba(99,102,241,.30);display:flex;align-items:center;gap:8px;animation-delay:.8s">
+                  <span style="width:24px;height:24px;border-radius:7px;background:rgba(99,102,241,.18);display:flex;align-items:center;justify-content:center;font-size:12px">&#9993;</span>
+                  <span style="font:600 11px var(--font-sans);color:#4f46e5">Send email</span>
+                </div>
+                <div style="position:absolute;top:222px;left:46px;padding:9px 12px;border-radius:10px;background:rgba(20,20,45,.05);border:1px solid rgba(20,20,45,.09);font:600 10px var(--font-sans);color:#5f5f6b">Not opened</div>
+                <div style="position:absolute;top:222px;left:182px;padding:9px 12px;border-radius:10px;background:rgba(20,20,45,.05);border:1px solid rgba(20,20,45,.09);font:600 10px var(--font-sans);color:#5f5f6b">Opened &rarr; PX</div>
+              </div>
+            </div>
+
+            <!-- (B) timezone popover -->
+            <div data-par="34" class="csf-fl3 csf-stage__hide" style="position:absolute;top:30px;left:300px;z-index:24;padding:10px 13px;border-radius:11px;background:rgba(255,255,255,.82);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border:1px solid rgba(20,20,45,.10);box-shadow:0 18px 40px -16px rgba(30,30,70,.22)">
+              <div style="display:flex;align-items:center;gap:8px">
+                <span style="font-size:13px">&#127758;</span>
+                <span style="font:600 11px var(--font-sans);color:#1c1c24">Send 9:00 AM</span>
+                <span style="font:600 11px var(--font-sans);color:#818cf8">local time</span>
+              </div>
+            </div>
+
+            <!-- (C) AI source dialog -->
+            <div data-par="-16" class="csf-fl1 csf-stage__hide" style="position:absolute;top:206px;left:330px;width:286px;z-index:25;border-radius:14px;padding:16px;background:rgba(255,255,255,.85);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);border:1px solid rgba(124,58,237,.3);box-shadow:0 30px 64px -22px rgba(124,58,237,.22)">
+              <div style="display:flex;align-items:center;gap:8px;margin-bottom:11px">
+                <span style="width:22px;height:22px;border-radius:7px;background:linear-gradient(135deg,#a78bfa,#818cf8);display:flex;align-items:center;justify-content:center;font-size:12px">&#10024;</span>
+                <span style="font:700 12px var(--font-sans);color:#2a2a32">AI Source Creation</span>
+              </div>
+              <div style="border-radius:9px;background:rgba(20,20,45,.05);border:1px solid rgba(20,20,45,.08);padding:10px;font:400 11px/1.5 var(--font-sans);color:#5f5f6b;margin-bottom:10px">&ldquo;Generate a re-engagement email for dormant enterprise admins&hellip;&rdquo;</div>
+              <div style="display:flex;gap:6px;align-items:center">
+                <div style="flex:1;height:7px;border-radius:4px;background:linear-gradient(90deg,#a78bfa,rgba(167,139,250,.2))"></div>
+                <span style="font:600 9px var(--font-sans);color:#a78bfa">drafting&hellip;</span>
+              </div>
+            </div>
+
+            <!-- (D) version history -->
+            <div data-par="22" class="csf-fl2 csf-stage__hide" style="position:absolute;top:54px;right:18px;width:236px;z-index:22;border-radius:14px;padding:15px;background:rgba(255,255,255,.82);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);border:1px solid rgba(20,20,45,.10);box-shadow:0 28px 60px -22px rgba(30,30,70,.22)">
+              <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px">
+                <span style="font:700 11px var(--font-sans);color:#1c1c24">Version history</span>
+                <span style="font:600 9px var(--font-sans);color:#9a9aa4">v12</span>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:0">
+                <div style="display:flex;gap:10px">
+                  <div style="display:flex;flex-direction:column;align-items:center"><span style="width:9px;height:9px;border-radius:50%;background:#818cf8;box-shadow:0 0 8px #818cf8"></span><span style="width:2px;flex:1;background:rgba(20,20,45,.10)"></span></div>
+                  <div style="padding-bottom:11px"><div style="font:600 11px var(--font-sans);color:#4f46e5">Draft v12 &middot; live edits</div><div style="font:500 9.5px var(--font-sans);color:#9a9aa4">You &middot; 2m ago</div></div>
+                </div>
+                <div style="display:flex;gap:10px">
+                  <div style="display:flex;flex-direction:column;align-items:center"><span style="width:9px;height:9px;border-radius:50%;background:#cdcdd8"></span><span style="width:2px;flex:1;background:rgba(20,20,45,.10)"></span></div>
+                  <div style="padding-bottom:11px"><div style="font:600 11px var(--font-sans);color:#5f5f6b">v11 &middot; published</div><div style="font:500 9.5px var(--font-sans);color:#9a9aa4">Maria &middot; 3d ago</div></div>
+                </div>
+                <div style="display:flex;gap:10px">
+                  <div style="display:flex;flex-direction:column;align-items:center"><span style="width:9px;height:9px;border-radius:50%;background:#cdcdd8"></span></div>
+                  <div><div style="font:600 11px var(--font-sans);color:#5f5f6b">v10 &middot; published</div><div style="font:500 9.5px var(--font-sans);color:#9a9aa4">Dev &middot; 1w ago</div></div>
                 </div>
               </div>
             </div>
-            <div class="work-card__body">
-              <div class="tag-row">
-                <span class="pill pill--accent">Platform</span>
-                <span class="pill">Systems thinking</span>
-                <span class="pill">Stakeholder alignment</span>
+
+            <!-- (E) analytics -->
+            <div data-par="30" class="csf-fl1 csf-stage__hide" style="position:absolute;top:280px;right:40px;width:222px;z-index:23;border-radius:14px;padding:15px;background:rgba(255,255,255,.82);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);border:1px solid rgba(20,20,45,.10);box-shadow:0 28px 60px -22px rgba(30,30,70,.22)">
+              <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px">
+                <span style="font:700 11px var(--font-sans);color:#1c1c24">Performance</span>
+                <span style="font:700 10px var(--font-sans);color:#34d399">&#9650; 12%</span>
               </div>
-              <h3 class="work-card__title">Program Versioning</h3>
-              <p class="measure">Led a three-phase, multi-quarter platform initiative letting admins safely edit live programs, a copy-based draft model that shipped 100+ tickets with zero active-program disruptions.</p>
-              <span class="link-arrow">Read the case study
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg>
-              </span>
+              <div style="display:flex;align-items:flex-end;gap:6px;height:54px">
+                <div style="flex:1;height:40%;border-radius:4px 4px 0 0;background:rgba(99,102,241,.30)"></div>
+                <div style="flex:1;height:62%;border-radius:4px 4px 0 0;background:rgba(129,140,248,.55)"></div>
+                <div style="flex:1;height:50%;border-radius:4px 4px 0 0;background:rgba(99,102,241,.40)"></div>
+                <div style="flex:1;height:80%;border-radius:4px 4px 0 0;background:rgba(129,140,248,.7)"></div>
+                <div style="flex:1;height:100%;border-radius:4px 4px 0 0;background:linear-gradient(#a78bfa,#818cf8)"></div>
+              </div>
+              <div style="margin-top:9px;font:500 9.5px var(--font-sans);color:#9a9aa4">Open rate &middot; last 5 sends</div>
             </div>
+
+            <!-- (F) test simulation -->
+            <div data-par="-26" class="csf-fl2 csf-stage__hide" style="position:absolute;bottom:30px;left:354px;width:300px;z-index:21;border-radius:14px;overflow:hidden;background:rgba(255,255,255,.85);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border:1px solid rgba(167,139,250,.3);box-shadow:0 30px 64px -24px rgba(30,30,70,.24)">
+              <div style="display:flex;align-items:center;justify-content:space-between;padding:11px 14px;border-bottom:1px solid rgba(20,20,45,.07)">
+                <span style="font:700 11px var(--font-sans);color:#1c1c24">Test simulation</span>
+                <span style="display:flex;align-items:center;gap:6px;font:600 9.5px var(--font-sans);color:#a78bfa"><span style="width:6px;height:6px;border-radius:50%;background:#a78bfa;box-shadow:0 0 7px #a78bfa"></span>DRY RUN</span>
+              </div>
+              <div style="padding:13px 14px;display:flex;flex-direction:column;gap:8px">
+                <div style="display:flex;align-items:center;gap:9px"><span style="font:500 9.5px var(--font-sans);color:#8a8a96;width:46px">Step 1</span><div style="flex:1;height:6px;border-radius:3px;background:#a78bfa"></div><span style="font-size:11px;color:#34d399">&#10003;</span></div>
+                <div style="display:flex;align-items:center;gap:9px"><span style="font:500 9.5px var(--font-sans);color:#8a8a96;width:46px">Step 2</span><div style="flex:1;height:6px;border-radius:3px;background:linear-gradient(90deg,#a78bfa 64%,rgba(20,20,45,.08) 64%)"></div><span style="font-size:11px;color:#a78bfa">&#9656;</span></div>
+                <div style="display:flex;align-items:center;gap:9px"><span style="font:500 9.5px var(--font-sans);color:#8a8a96;width:46px">Step 3</span><div style="flex:1;height:6px;border-radius:3px;background:rgba(20,20,45,.08)"></div><span style="font:600 9px var(--font-sans);color:#9a9aa4">queued</span></div>
+              </div>
+            </div>
+
+            <!-- (G) template library -->
+            <div data-par="18" class="csf-fl3 csf-stage__hide" style="position:absolute;bottom:40px;left:30px;width:240px;z-index:20;border-radius:14px;padding:15px;background:rgba(255,255,255,.82);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);border:1px solid rgba(20,20,45,.10);box-shadow:0 28px 60px -24px rgba(30,30,70,.22)">
+              <div style="font:700 11px var(--font-sans);color:#1c1c24;margin-bottom:13px">Template library</div>
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+                <div style="border-radius:8px;padding:9px;background:rgba(20,20,45,.05);border:1px solid rgba(20,20,45,.07)"><div style="height:5px;width:80%;border-radius:3px;background:rgba(129,140,248,.55);margin-bottom:5px"></div><div style="height:5px;width:55%;border-radius:3px;background:rgba(20,20,45,.10)"></div></div>
+                <div style="border-radius:8px;padding:9px;background:rgba(20,20,45,.05);border:1px solid rgba(20,20,45,.07)"><div style="height:5px;width:70%;border-radius:3px;background:rgba(52,211,153,.55);margin-bottom:5px"></div><div style="height:5px;width:60%;border-radius:3px;background:rgba(20,20,45,.10)"></div></div>
+                <div style="border-radius:8px;padding:9px;background:rgba(20,20,45,.05);border:1px solid rgba(20,20,45,.07)"><div style="height:5px;width:65%;border-radius:3px;background:rgba(167,139,250,.55);margin-bottom:5px"></div><div style="height:5px;width:50%;border-radius:3px;background:rgba(20,20,45,.10)"></div></div>
+                <div style="border-radius:8px;padding:9px;background:rgba(129,140,248,.12);border:1px dashed rgba(99,102,241,.30);display:flex;align-items:center;justify-content:center;font:700 14px var(--font-sans);color:#4f46e5">+</div>
+              </div>
+            </div>
+
+            <div class="csf-sweep" style="position:absolute;top:0;bottom:0;left:0;width:40%;pointer-events:none;z-index:28;background:linear-gradient(105deg,transparent,rgba(99,102,241,.06),transparent);mix-blend-mode:multiply"></div>
+          </div>
+
+          <!-- narrative + outcomes + cta -->
+          <div class="csf-flag__body" style="position:relative;z-index:31;padding:46px 52px 50px">
+            <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px">
+              <span style="padding:6px 12px;border-radius:8px;background:rgba(99,102,241,.10);border:1px solid rgba(99,102,241,.24);color:#4f46e5;font:600 12px var(--font-sans)">Enterprise SaaS</span>
+              <span style="padding:6px 12px;border-radius:8px;background:rgba(20,20,45,.04);border:1px solid rgba(20,20,45,.08);color:#6a6a78;font:500 12px var(--font-sans)">AI-native platform</span>
+              <span style="padding:6px 12px;border-radius:8px;background:rgba(20,20,45,.04);border:1px solid rgba(20,20,45,.08);color:#6a6a78;font:500 12px var(--font-sans)">Design systems</span>
+            </div>
+            <div class="csf-flag__grid" style="display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:end">
+              <div>
+                <div style="font:600 13px var(--font-sans);letter-spacing:.05em;color:#818cf8;margin-bottom:12px">FLAGSHIP PROGRAM</div>
+                <h3 style="margin:0 0 18px;font-weight:800;font-size:clamp(2rem,1.4rem+2.2vw,3.25rem);line-height:1;letter-spacing:-.035em;color:#0b0b14">Journey Orchestrator</h3>
+                <p style="margin:0;max-width:520px;font-size:1rem;line-height:1.7;color:#5f5f6b">A ground-up rebuild of a brittle internal Program Builder into an extensible, AI-native platform &mdash; drag-and-drop authoring, inline source generation, safe versioning, dry-run testing and dynamic participant timezones. I led research, stakeholder alignment, systems architecture and the end-to-end design.</p>
+              </div>
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+                <div style="padding:18px;border-radius:15px;background:rgba(20,20,45,.03);border:1px solid rgba(20,20,45,.08)">
+                  <div style="font-weight:800;font-size:2rem;line-height:1;letter-spacing:-.03em;color:#0b0b14">&minus;<span data-count="58">0</span>%</div>
+                  <div style="margin-top:6px;font:500 11.5px var(--font-sans);color:#8a8a96">setup time</div>
+                </div>
+                <div style="padding:18px;border-radius:15px;background:rgba(20,20,45,.03);border:1px solid rgba(20,20,45,.08)">
+                  <div style="font-weight:800;font-size:2rem;line-height:1;letter-spacing:-.03em;color:#0b0b14"><span data-count="2">0</span>&times;</div>
+                  <div style="margin-top:6px;font:500 11.5px var(--font-sans);color:#8a8a96">monthly growth</div>
+                </div>
+                <div style="padding:18px;border-radius:15px;background:rgba(20,20,45,.03);border:1px solid rgba(20,20,45,.08)">
+                  <div style="font-weight:800;font-size:2rem;line-height:1;letter-spacing:-.03em;color:#0b0b14"><span data-count="100">0</span>+</div>
+                  <div style="margin-top:6px;font:500 11.5px var(--font-sans);color:#8a8a96">programs migrated</div>
+                </div>
+                <div style="padding:18px;border-radius:15px;background:rgba(129,140,248,.10);border:1px solid rgba(99,102,241,.24)">
+                  <div style="font-weight:800;font-size:2rem;line-height:1;letter-spacing:-.03em;color:#4f46e5">Zero</div>
+                  <div style="margin-top:6px;font:500 11.5px var(--font-sans);color:#6a70c8">live disruptions</div>
+                </div>
+              </div>
+            </div>
+            <a href="/journey-orchestrator" class="csf-cta" style="display:inline-flex;align-items:center;gap:9px;margin-top:34px;padding:0 1px 5px;color:#0b0b14;font-weight:700;font-size:.95rem;text-decoration:none">Read the full case study <span style="color:#818cf8;font-size:1.05rem">&#8599;</span></a>
+          </div>
+        </div>
+
+        <!-- connector -->
+        <div style="position:relative;margin-top:4px" aria-hidden="true">
+          <svg viewBox="0 0 1000 96" preserveAspectRatio="none" style="display:block;width:100%;height:80px">
+            <path d="M500 0 L500 32" fill="none" stroke="rgba(129,140,248,.6)" stroke-width="2"/>
+            <path d="M500 32 C500 70 264 54 264 96" fill="none" stroke="rgba(99,102,241,.40)" stroke-width="2"/>
+            <path d="M500 32 C500 70 736 54 736 96" fill="none" stroke="rgba(99,102,241,.40)" stroke-width="2"/>
+          </svg>
+          <div style="position:absolute;top:26px;left:50%;transform:translateX(-50%);width:11px;height:11px;border-radius:50%;background:#818cf8;box-shadow:0 0 14px #818cf8"></div>
+        </div>
+
+        <div class="csf-caplabel" data-reveal style="display:flex;align-items:center;gap:14px;margin:4px 0 26px">
+          <span style="font:700 12px var(--font-sans);letter-spacing:.16em;color:#8a8a96">KEY CAPABILITIES</span>
+          <span style="font:400 12px var(--font-sans);color:#aeaeb8">two deep dives within Journey Orchestrator</span>
+          <div style="flex:1;height:1px;background:linear-gradient(90deg,rgba(20,20,45,.10),transparent)"></div>
+        </div>
+
+        <!-- capability cards -->
+        <div class="csf-caps" style="display:grid;grid-template-columns:1fr 1fr;gap:22px">
+
+          <a href="/program-versioning" class="csf-cap" data-reveal style="position:relative;display:block;padding:30px;border-radius:22px;text-decoration:none;overflow:hidden;background:linear-gradient(180deg,#fff,#fbfbfd);border:1px solid rgba(20,20,45,.08);box-shadow:0 24px 56px -28px rgba(30,30,70,.20)">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px">
+              <span style="padding:5px 11px;border-radius:8px;background:rgba(99,102,241,.10);border:1px solid rgba(99,102,241,.18);color:#4f46e5;font:700 11px var(--font-sans);letter-spacing:.04em">Program Versioning</span>
+              <span style="font:600 11px var(--font-sans);letter-spacing:.1em;color:#aeaeb8">01</span>
+            </div>
+            <div style="position:relative;height:118px;border-radius:13px;background:rgba(20,20,45,.03);border:1px solid rgba(20,20,45,.07);overflow:hidden;margin-bottom:22px">
+              <svg viewBox="0 0 360 118" preserveAspectRatio="none" style="position:absolute;inset:0;width:100%;height:100%">
+                <path d="M40 59 L150 59" stroke="rgba(20,20,45,.18)" stroke-width="2" fill="none"/>
+                <path d="M150 59 C200 59 200 30 250 30" stroke="rgba(129,140,248,.7)" stroke-width="2" fill="none" data-flowline/>
+                <path d="M150 59 L300 59" stroke="rgba(20,20,45,.18)" stroke-width="2" fill="none"/>
+              </svg>
+              <div style="position:absolute;top:49px;left:24px;width:20px;height:20px;border-radius:50%;background:#e7e7ee;border:2px solid #aeaeb8"></div>
+              <div style="position:absolute;top:49px;left:300px;width:20px;height:20px;border-radius:50%;background:#e7e7ee;border:2px solid #aeaeb8"></div>
+              <div style="position:absolute;top:20px;left:236px;padding:5px 9px;border-radius:7px;background:rgba(99,102,241,.12);border:1px solid rgba(99,102,241,.40);font:700 9px var(--font-sans);color:#4f46e5">draft v12</div>
+              <div style="position:absolute;bottom:10px;left:24px;font:600 9px var(--font-sans);color:#9a9aa4">live program</div>
+              <div style="position:absolute;bottom:10px;right:18px;font:600 9px var(--font-sans);color:#9a9aa4">published</div>
+            </div>
+            <h4 style="margin:0 0 9px;font-weight:700;font-size:1.45rem;line-height:1.12;letter-spacing:-.02em;color:#0b0b14">Branch, edit, publish &mdash; safely.</h4>
+            <p style="margin:0 0 18px;font-size:.85rem;line-height:1.65;color:#6a6a78">A copy-based draft model that let admins edit live programs without risk. Compare changes, then publish atomically &mdash; 100+ tickets shipped with zero active-program disruptions.</p>
+            <span style="display:inline-flex;align-items:center;gap:7px;font:700 13px var(--font-sans);color:#2a2a32">Read the deep dive <span style="color:#818cf8">&#8599;</span></span>
           </a>
 
-          <a class="work-card" href="/program-testing" data-reveal aria-label="Read the Program Testing case study">
-            <div class="work-card__media" style="display:grid;place-items:center;padding:var(--space-xl)">
-              <div class="mock" style="width:100%;box-shadow:none">
-                <div class="mock__bar"><span class="mock__crumb">Test run snapshot</span><span style="margin-left:auto"><span class="status status--test">Test Mode</span></span></div>
-                <div class="mock__body" style="padding:var(--space-md)">
-                  <div class="funnel" style="gap:0.35rem">
-                    <div class="funnel__row" style="grid-template-columns:4rem 1fr 1.5rem"><span class="funnel__label" style="font-size:0.8em">Email</span><span class="funnel__bar" style="width:100%;height:0.55rem"></span><span class="funnel__pct" style="font-size:0.8em">3</span></div>
-                    <div class="funnel__row" style="grid-template-columns:4rem 1fr 1.5rem"><span class="funnel__label" style="font-size:0.8em">End +</span><span class="funnel__bar" style="width:67%;height:0.55rem"></span><span class="funnel__pct" style="font-size:0.8em">2</span></div>
-                    <div class="funnel__row" style="grid-template-columns:4rem 1fr 1.5rem"><span class="funnel__label" style="font-size:0.8em">End risk</span><span class="funnel__bar" style="width:33%;height:0.55rem"></span><span class="funnel__pct" style="font-size:0.8em">1</span></div>
-                  </div>
-                </div>
-              </div>
+          <a href="/program-testing" class="csf-cap csf-cap--violet" data-reveal style="position:relative;display:block;padding:30px;border-radius:22px;text-decoration:none;overflow:hidden;background:linear-gradient(180deg,#fff,#fbfbfd);border:1px solid rgba(20,20,45,.08);box-shadow:0 24px 56px -28px rgba(30,30,70,.20)">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px">
+              <span style="padding:5px 11px;border-radius:8px;background:rgba(167,139,250,.14);border:1px solid rgba(167,139,250,.3);color:#7c3aed;font:700 11px var(--font-sans);letter-spacing:.04em">Program Testing</span>
+              <span style="font:600 11px var(--font-sans);letter-spacing:.1em;color:#aeaeb8">02</span>
             </div>
-            <div class="work-card__body">
-              <div class="tag-row">
-                <span class="pill pill--accent">Product strategy</span>
-                <span class="pill">MVP scoping</span>
-                <span class="pill">PRD authorship</span>
-              </div>
-              <h3 class="work-card__title">Program Testing</h3>
-              <p class="measure">Authored the PRD and designed a dry-run simulation that made publishing feel safe for the first time, a disciplined vision-vs-MVP story shipped with zero live side effects.</p>
-              <span class="link-arrow">Read the case study
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg>
-              </span>
+            <div style="position:relative;height:118px;border-radius:13px;background:rgba(20,20,45,.03);border:1px solid rgba(20,20,45,.07);padding:14px;margin-bottom:22px">
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:11px"><span style="font:600 10px var(--font-sans);color:#6a6a78">Dry-run preview</span><span style="display:flex;align-items:center;gap:6px;font:600 9px var(--font-sans);color:#a78bfa"><span style="width:6px;height:6px;border-radius:50%;background:#a78bfa;box-shadow:0 0 7px #a78bfa"></span>SIMULATING</span></div>
+              <div style="display:flex;align-items:center;gap:9px;margin-bottom:8px"><span style="font:500 9px var(--font-sans);color:#9a9aa4;width:54px">Validate</span><div style="flex:1;height:7px;border-radius:4px;background:#a78bfa"></div></div>
+              <div style="display:flex;align-items:center;gap:9px;margin-bottom:8px"><span style="font:500 9px var(--font-sans);color:#9a9aa4;width:54px">Preview</span><div style="flex:1;height:7px;border-radius:4px;background:linear-gradient(90deg,#9b85ee 70%,rgba(20,20,45,.07) 70%)"></div></div>
+              <div style="display:flex;align-items:center;gap:9px"><span style="font:500 9px var(--font-sans);color:#9a9aa4;width:54px">Side-effects</span><div style="flex:1;height:7px;border-radius:4px;background:linear-gradient(90deg,#34d399 6%,rgba(20,20,45,.07) 6%)"></div><span style="font:600 9px var(--font-sans);color:#34d399">none</span></div>
             </div>
-          </a>
-
-          <a class="work-card" href="/accessibility-1" data-reveal aria-label="Read the Accessibility at Scale case study">
-            <div class="work-card__media" style="display:grid;place-items:center;padding:var(--space-xl)">
-              <div class="mock" style="width:100%;box-shadow:none">
-                <div class="mock__bar"><span class="mock__crumb">Accessibility program</span><span style="margin-left:auto"><span class="status status--active">VPAT</span></span></div>
-                <div class="mock__body" style="padding:var(--space-md);display:grid;gap:0.5rem">
-                  <div class="flow-node" style="padding:0.45rem 0.7rem"><span class="flow-node__name">Phase 1 &middot; End-user</span><span class="status status--active" style="padding:0.1rem 0.5rem">Done</span></div>
-                  <div class="flow-node" style="padding:0.45rem 0.7rem"><span class="flow-node__name">Phase 2 &middot; CSM</span><span class="status status--active" style="padding:0.1rem 0.5rem">Done</span></div>
-                  <div class="flow-node" style="padding:0.45rem 0.7rem"><span class="flow-node__name">Phase 3 &middot; Admin</span><span class="status status--active" style="padding:0.1rem 0.5rem">Done</span></div>
-                </div>
-              </div>
-            </div>
-            <div class="work-card__body">
-              <div class="tag-row">
-                <span class="pill pill--accent">Org transformation</span>
-                <span class="pill">Governance</span>
-                <span class="pill">Design ops</span>
-              </div>
-              <h3 class="work-card__title">Accessibility at Scale</h3>
-              <p class="measure">Initiated and led a company-wide accessibility program, strategy, vendor management, design-system governance, engineering alignment and customer retention, through to VPAT certification.</p>
-              <span class="link-arrow">Read the case study
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg>
-              </span>
-            </div>
+            <h4 style="margin:0 0 9px;font-weight:700;font-size:1.45rem;line-height:1.12;letter-spacing:-.02em;color:#0b0b14">Publish with confidence.</h4>
+            <p style="margin:0 0 18px;font-size:.85rem;line-height:1.65;color:#6a6a78">A dry-run simulation that made publishing feel safe for the first time &mdash; a disciplined vision-vs-MVP scope shipped with zero live side effects, turning a tense moment into a routine one.</p>
+            <span style="display:inline-flex;align-items:center;gap:7px;font:700 13px var(--font-sans);color:#2a2a32">Read the deep dive <span style="color:#a78bfa">&#8599;</span></span>
           </a>
         </div>
+
+        <!-- ACCESSIBILITY : governance timeline -->
+        <div class="csf-gov" data-reveal style="position:relative;margin-top:72px;border-radius:30px;overflow:hidden;border:1px solid rgba(20,20,45,.08);background:linear-gradient(125deg,#fff,#f6fbf8);box-shadow:0 60px 140px -56px rgba(30,30,70,.26),inset 0 1px 0 rgba(255,255,255,.7)">
+          <div class="csf-gpulse" style="position:absolute;top:-90px;right:-50px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(34,197,94,.10),transparent 70%);filter:blur(26px);pointer-events:none"></div>
+          <div class="csf-gov__pad" style="position:relative;padding:52px 52px 20px">
+            <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px">
+              <span style="padding:6px 12px;border-radius:8px;background:rgba(34,197,94,.13);border:1px solid rgba(34,197,94,.28);color:#15803d;font:600 12px var(--font-sans)">Org transformation</span>
+              <span style="padding:6px 12px;border-radius:8px;background:rgba(20,20,45,.04);border:1px solid rgba(20,20,45,.08);color:#6a6a78;font:500 12px var(--font-sans)">Governance</span>
+              <span style="padding:6px 12px;border-radius:8px;background:rgba(20,20,45,.04);border:1px solid rgba(20,20,45,.08);color:#6a6a78;font:500 12px var(--font-sans)">Design ops</span>
+            </div>
+            <div class="csf-gov__grid" style="display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:end">
+              <div>
+                <div style="font:600 13px var(--font-sans);letter-spacing:.05em;color:#34d399;margin-bottom:12px">COMPANY-WIDE INITIATIVE</div>
+                <h3 style="margin:0 0 18px;font-weight:800;font-size:clamp(2rem,1.4rem+2vw,3rem);line-height:1.02;letter-spacing:-.035em;color:#0b0b14">Accessibility Program</h3>
+                <p style="margin:0;max-width:480px;font-size:1rem;line-height:1.7;color:#5f5f6b">I initiated and led a company-wide accessibility transformation &mdash; setting strategy, managing vendors, establishing design-system governance and aligning engineering, all the way through to formal VPAT certification.</p>
+              </div>
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+                <div style="padding:18px;border-radius:15px;background:rgba(20,20,45,.03);border:1px solid rgba(20,20,45,.08)">
+                  <div style="font-weight:800;font-size:2rem;line-height:1;letter-spacing:-.03em;color:#0b0b14"><span data-count="98">0</span>%</div>
+                  <div style="margin-top:6px;font:500 11.5px var(--font-sans);color:#8a8a96">WCAG 2.1 AA</div>
+                </div>
+                <div style="padding:18px;border-radius:15px;background:rgba(34,197,94,.1);border:1px solid rgba(34,197,94,.18)">
+                  <div style="font-weight:800;font-size:2rem;line-height:1;letter-spacing:-.03em;color:#15803d">VPAT</div>
+                  <div style="margin-top:6px;font:500 11.5px var(--font-sans);color:#3aa873">certified</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="csf-gov__tl" style="position:relative;padding:14px 52px 30px">
+            <div style="font:700 11px var(--font-sans);letter-spacing:.14em;color:#5a8473;margin-bottom:22px">GOVERNANCE WORKFLOW</div>
+            <div style="position:relative">
+              <svg viewBox="0 0 1000 12" preserveAspectRatio="none" style="position:absolute;top:19px;left:0;width:100%;height:12px" aria-hidden="true">
+                <path d="M20 6 L980 6" fill="none" stroke="rgba(52,211,153,.45)" stroke-width="2"/>
+              </svg>
+              <div class="csf-tl" style="position:relative;display:grid;grid-template-columns:repeat(5,1fr);gap:14px">
+                <div data-reveal style="display:flex;flex-direction:column;align-items:flex-start">
+                  <span style="width:14px;height:14px;border-radius:50%;background:#34d399;box-shadow:0 0 12px rgba(52,211,153,.7);margin-bottom:18px;margin-left:6px"></span>
+                  <div style="font:700 14px var(--font-sans);color:#0b0b14;margin-bottom:5px">Audit</div>
+                  <div style="font:400 12px/1.5 var(--font-sans);color:#6a8a7c">Full WCAG audit across product surfaces.</div>
+                </div>
+                <div data-reveal style="display:flex;flex-direction:column;align-items:flex-start">
+                  <span style="width:14px;height:14px;border-radius:50%;background:#34d399;box-shadow:0 0 12px rgba(52,211,153,.7);margin-bottom:18px;margin-left:6px"></span>
+                  <div style="font:700 14px var(--font-sans);color:#0b0b14;margin-bottom:5px">Prioritize</div>
+                  <div style="font:400 12px/1.5 var(--font-sans);color:#6a8a7c">Severity &times; reach scoring, roadmap.</div>
+                </div>
+                <div data-reveal style="display:flex;flex-direction:column;align-items:flex-start">
+                  <span style="width:14px;height:14px;border-radius:50%;background:#34d399;box-shadow:0 0 12px rgba(52,211,153,.7);margin-bottom:18px;margin-left:6px"></span>
+                  <div style="font:700 14px var(--font-sans);color:#0b0b14;margin-bottom:5px">Remediate</div>
+                  <div style="font:400 12px/1.5 var(--font-sans);color:#6a8a7c">Design-system component upgrades.</div>
+                </div>
+                <div data-reveal style="display:flex;flex-direction:column;align-items:flex-start">
+                  <span style="width:14px;height:14px;border-radius:50%;background:#34d399;box-shadow:0 0 12px rgba(52,211,153,.7);margin-bottom:18px;margin-left:6px"></span>
+                  <div style="font:700 14px var(--font-sans);color:#0b0b14;margin-bottom:5px">Validate</div>
+                  <div style="font:400 12px/1.5 var(--font-sans);color:#6a8a7c">AT testing, 3-phase rollout.</div>
+                </div>
+                <div data-reveal style="display:flex;flex-direction:column;align-items:flex-start">
+                  <span style="width:14px;height:14px;border-radius:50%;background:#15803d;box-shadow:0 0 16px rgba(52,211,153,.9);margin-bottom:18px;margin-left:6px;border:2px solid #34d399"></span>
+                  <div style="font:700 14px var(--font-sans);color:#0b0b14;margin-bottom:5px">VPAT &#10003;</div>
+                  <div style="font:400 12px/1.5 var(--font-sans);color:#6a8a7c">Formal certification achieved.</div>
+                </div>
+              </div>
+            </div>
+            <a href="/accessibility-1" class="csf-cta" style="--u:#34d399;display:inline-flex;align-items:center;gap:9px;margin-top:34px;padding:0 1px 5px;color:#0b0b14;font-weight:700;font-size:.95rem;text-decoration:none">Read the case study <span style="color:#34d399;font-size:1.05rem">&#8599;</span></a>
+          </div>
+        </div>
+
       </div>
     </section>
 

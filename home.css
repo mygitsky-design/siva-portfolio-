@@ -92,3 +92,51 @@
 .home-cine .hero__title .hc-w { display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: .04em; }
 .home-cine .hero__title .hc-w__i { display: inline-block; will-change: transform; }
 .home-cine .hero__actions .btn { transition: transform .28s var(--hc-ease), background .25s var(--hc-ease), box-shadow .25s var(--hc-ease); }
+
+/* ============================================================
+   Case Studies — Flagship section (home). Scoped to .csf.
+   Recreated from the "Case Studies Flagship Light" handoff.
+   ============================================================ */
+.csf { position: relative; }
+@keyframes csf-fl1 { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
+@keyframes csf-fl2 { 0%,100%{transform:translateY(0)} 50%{transform:translateY(8px)} }
+@keyframes csf-fl3 { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-6px)} }
+@keyframes csf-gpulse { 0%,100%{opacity:.4} 50%{opacity:.85} }
+@keyframes csf-nodepulse { 0%,100%{box-shadow:0 0 0 0 rgba(129,140,248,0)} 50%{box-shadow:0 0 0 6px rgba(129,140,248,.10)} }
+@keyframes csf-flow { to { stroke-dashoffset:-22 } }
+@keyframes csf-sweep { 0%{transform:translateX(-120%)} 60%,100%{transform:translateX(220%)} }
+.csf [data-flowline] { stroke-dasharray:5 6; animation:csf-flow 1.1s linear infinite; }
+
+/* glass panels float */
+.csf-fl1 { animation:csf-fl1 8s ease-in-out infinite; }
+.csf-fl2 { animation:csf-fl2 9s ease-in-out infinite; }
+.csf-fl3 { animation:csf-fl3 7s ease-in-out infinite; }
+.csf-gpulse { animation:csf-gpulse 8s ease-in-out infinite; }
+.csf-nodepulse { animation:csf-nodepulse 4s ease-in-out infinite; }
+.csf-sweep { animation:csf-sweep 8s ease-in-out infinite; }
+
+/* capability card hover + cta underline */
+.csf-cap { transition:transform .4s cubic-bezier(.16,1,.3,1), border-color .4s ease, box-shadow .4s ease; }
+.csf-cap:hover { transform:translateY(-6px); border-color:rgba(99,102,241,.30); box-shadow:0 50px 90px -34px rgba(99,102,241,.5); }
+.csf-cap--violet:hover { border-color:rgba(167,139,250,.4); box-shadow:0 50px 90px -34px rgba(167,139,250,.45); }
+.csf-cta { --u:#818cf8; background-image:linear-gradient(var(--u),var(--u)); background-repeat:no-repeat; background-position:0 100%; background-size:0% 2px; transition:background-size .45s cubic-bezier(.16,1,.3,1), gap .3s ease; }
+.csf-cta:hover { background-size:100% 2px; gap:15px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .csf *, .csf *::before, .csf *::after { animation: none !important; }
+}
+@media (max-width: 900px) {
+  .csf-flag__grid, .csf-gov__grid { grid-template-columns: 1fr !important; gap: 30px !important; }
+  .csf-caps { grid-template-columns: 1fr !important; }
+  .csf-stage { height: 440px !important; }
+  .csf-flag__body, .csf-gov__pad, .csf-gov__tl { padding-left: 26px !important; padding-right: 26px !important; }
+  .csf-tl { grid-template-columns: 1fr 1fr !important; gap: 22px 14px !important; }
+}
+@media (max-width: 560px) {
+  .csf-outcomes { grid-template-columns: 1fr 1fr; }
+  .csf-stage__hide { display: none !important; }
+}
+
+/* Flagship header sits on the page canvas (not a card) — keep it legible in dark mode */
+:root[data-theme="dark"] .home-cine .csf__head h2 { color: #f4f4f5; }
+:root[data-theme="dark"] .home-cine .csf__head p { color: #a1a1aa; }

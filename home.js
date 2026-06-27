@@ -76,3 +76,37 @@
   nav.addEventListener("focusin", () => { hidden = false; nav.classList.remove("is-hidden"); });
   onScroll();
 })();
+
+/* Case Studies Flagship: pointer spotlight + subtle parallax on the hero composition */
+(function () {
+  "use strict";
+  if (!document.body.classList.contains("home-cine")) return;
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  if (!window.matchMedia("(pointer: fine)").matches) return;
+  const flag = document.querySelector(".csf-flag");
+  const stage = document.querySelector("[data-csf-stage]");
+  const spot = document.querySelector(".csf-flag__spot");
+  if (!flag || !stage) return;
+  const layers = Array.prototype.slice.call(stage.querySelectorAll("[data-par]"));
+  let raf = null, tx = 0, ty = 0, cx = 0, cy = 0;
+  const loop = () => {
+    cx += (tx - cx) * 0.08; cy += (ty - cy) * 0.08;
+    layers.forEach((el) => {
+      const f = parseFloat(el.dataset.par) || 0;
+      el.style.transform = "translate(" + (cx * f) + "px," + (cy * f) + "px)";
+    });
+    raf = (Math.abs(tx - cx) > 0.01 || Math.abs(ty - cy) > 0.01) ? requestAnimationFrame(loop) : null;
+  };
+  flag.addEventListener("pointermove", (e) => {
+    const r = flag.getBoundingClientRect();
+    const x = (e.clientX - r.left) / r.width, y = (e.clientY - r.top) / r.height;
+    if (spot) spot.style.background = "radial-gradient(520px circle at " + (x * 100) + "% " + (y * 100) + "%, rgba(99,102,241,.10), transparent 60%)";
+    tx = x - 0.5; ty = y - 0.5;
+    if (!raf) raf = requestAnimationFrame(loop);
+  });
+  flag.addEventListener("pointerleave", () => {
+    if (spot) spot.style.background = "transparent";
+    tx = 0; ty = 0;
+    if (!raf) raf = requestAnimationFrame(loop);
+  });
+})();
